@@ -1,0 +1,32 @@
+
+== OpenML 49 vs processed.cleveland.data: 303 rows, joined 302 on ['age', 'trestbps', 'chol', 'thalach']
+cp_uci       1.0  2.0  3.0  4.0
+cp_ml                          
+asympt         0    0    0  143
+atyp_angina    0   50    0    0
+non_anginal    0    0   86    0
+typ_angina    23    0    0    0
+
+== OpenML 51 vs processed.hungarian.data: 294 rows, joined 293 on ['age', 'trestbps', 'chol', 'thalach']
+cp_uci        1    2   3    4
+cp_ml                        
+asympt        0    0   0  123
+atyp_angina   0  105   0    0
+non_anginal   0    0  54    0
+typ_angina   11    0   0    0
+
+== OpenML 194 vs processed.cleveland.data: 303 rows, joined 303 on ['age', 'trestbps', 'chol', 'thalach']
+cp_uci  1.0  2.0  3.0  4.0
+cp_ml                     
+1        23    0    0    0
+2         0   50    0    0
+3         0    0   86    0
+4         0    0    0  144
+
+== OpenML 786 vs processed.cleveland.data: 303 rows, joined 303 on ['age', 'trestbps', 'chol', 'thalach']
+cp_uci  1.0  2.0  3.0  4.0
+cp_ml                     
+1        23    0    0    0
+2         0   50    0    0
+3         0    0   86    0
+4         0    0    0  144

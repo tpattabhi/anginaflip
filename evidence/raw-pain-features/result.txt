@@ -1,0 +1,37 @@
+
+=== hungarian.data: 294 records, 294 parsed, 294 with all three pain fields
+rows = cp code; cols = number of typical-angina features (substernal, exertional, relieved by rest)
+classic   0   1   2    3
+cp                      
+1.0      10   0   0    1
+2.0       8  95   3    0
+3.0       2  18  34    0
+4.0       0   0   5  118
+CAD rate by cp: {1.0: 0.36, 2.0: 0.08, 3.0: 0.2, 4.0: 0.67}
+
+=== switzerland.data: 123 records, 123 parsed, 123 with all three pain fields
+rows = cp code; cols = number of typical-angina features (substernal, exertional, relieved by rest)
+classic  0  1  2   3
+cp                  
+1.0      4  0  0   0
+2.0      3  0  1   0
+3.0      2  8  4   3
+4.0      1  3  3  91
+CAD rate by cp: {1.0: 1.0, 2.0: 0.5, 3.0: 0.76, 4.0: 0.98}
+
+=== long-beach-va.data: 200 records, 200 parsed, 196 with all three pain fields
+rows = cp code; cols = number of typical-angina features (substernal, exertional, relieved by rest)
+classic  0   1   2    3
+cp                     
+1.0      8   0   0    0
+2.0      2  10   2    0
+3.0      0   9  34    0
+4.0      0   0   5  126
+CAD rate by cp: {1.0: 0.62, 2.0: 0.36, 3.0: 0.66, 4.0: 0.82}
+
+=== cleveland.data: 293 records, 282 parsed, 0 with all three pain fields
+rows = cp code; cols = number of typical-angina features (substernal, exertional, relieved by rest)
+Empty DataFrame
+Columns: []
+Index: []
+CAD rate by cp: {1.0: 0.27, 2.0: 0.19, 3.0: 0.2, 4.0: 0.71}

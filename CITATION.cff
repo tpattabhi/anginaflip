@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Typical Angina, Reversed: A Chest-Pain Coding Error in the UCI Heart Disease Data That Has Persisted Since 1990"
+authors:
+  - family-names: Pattabhi
+    given-names: Tejas Tovinkere
+    affiliation: University of the Cumberlands
+    orcid: "https://orcid.org/0009-0000-9364-9519"
+date-released: 2026-11-18
+license: MIT
+repository-code: "https://github.com/tpattabhi/anginaflip"

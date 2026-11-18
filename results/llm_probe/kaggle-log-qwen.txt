@@ -1,0 +1,12 @@
+# Copied from the Kaggle commit log, notebook tejaspattabhi/notebookf8919166ab (private), 18 Nov 2026 ~01:50 PST
+2637.9s unsloth/Qwen2.5-7B-Instruct-bnb-4bit 2502s scoring yes/no token ids 9454 2753
+model template auc_D auc_C auc_O d_auc_C_minus_D d_auc_lo d_auc_hi d_log_loss_C_minus_D d_log_loss_lo d_log_loss_hi
+Qwen2.5-7B-Instruct-bnb-4bit full 0.844 0.861 0.859 0.016 0.004 0.030 -0.128 -0.215 -0.042
+Qwen2.5-7B-Instruct-bnb-4bit minimal 0.458 0.789 0.637 0.331 0.240 0.425 -1.788 -2.108 -1.487
+model template condition 1 2 3 4   (mean P(Yes) by UCI cp code; minimal rounds to 0.000 because P(Yes) < 0.0005 throughout; AUC is rank-based)
+Qwen2.5-7B-Instruct-bnb-4bit full C 0.188 0.072 0.234 0.578
+Qwen2.5-7B-Instruct-bnb-4bit full D 0.324 0.098 0.196 0.488
+Qwen2.5-7B-Instruct-bnb-4bit full O 0.204 0.082 0.197 0.527
+Qwen2.5-7B-Instruct-bnb-4bit minimal C 0.000 0.000 0.000 0.000
+Qwen2.5-7B-Instruct-bnb-4bit minimal D 0.000 0.000 0.000 0.000
+Qwen2.5-7B-Instruct-bnb-4bit minimal O 0.000 0.000 0.000 0.000

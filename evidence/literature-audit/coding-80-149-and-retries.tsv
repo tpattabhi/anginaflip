@@ -1,0 +1,117 @@
+k	idx	venue	copy	access	claim_verbatim	direction_coded	clinically_correct	rationalised	note
+1	75	IEEE SENNET 2025	UCI Cleveland	full text (UC library)	"A majority of people with heart disease have asymptomatic chests, as seen in Figure 4."	asymptomatic~disease	No	No	same coding as k20 (prevalence among CVD cases)
+3	64	IEEE 2026	?	full text (UC library)	none (maps typical..asymptomatic to 0-3 only)	none	n/a	-	not included
+5	116	IEEE 2026	303 records	full text (UC library)	none	none	n/a	-	not included
+9	50	IEEE 2026	303 (Kaggle mention)	full text (UC library)	none	none	n/a	-	not included
+17	25	IEEE 2025	303 records, word labels (ASY/TA)	full text (UC library)	"most heart disease is associated with asy types, which highlights a strong security between the possibility of analysis..."	asymptomatic highest	No	No	
+19	94	IEEE 2024	303 records	full text (UC library)	none	none	n/a	-	not included
+24	185	IEEE 2026	Kaggle 1,025	full text (UC library)	none	none	n/a	-	not included
+32	68	IEEE 2024	1,025 combined	full text (UC library)	none	none	n/a	-	not included
+33	255	IEEE 2024	918 (fedesoriano)	full text (UC library)	none	none	n/a	-	not included
+38	28	IEEE 2025	Statlog 270 + Cleveland 297	full text (UC library)	none	none	n/a	-	not included
+42	245	IEEE 2024	Kaggle	full text (UC library)	"48% of the patients exhibit Typical angina, while 28% display Non-typical angina" (prevalence only)	none	n/a	-	not included (prevalence only, no risk direction)
+56	122	IEEE 2023	918 (fedesoriano)	full text (UC library)	none	none	n/a	-	not included
+57	137	IEEE 2026 (BMIET)	303 records	full text PDF (UC library)	"\"asymptomatic\" chest discomfort, were quite common in patient cases with heart disease"	asymptomatic~disease	No	No	
+63	91	IEEE 2026	918 (fedesoriano)	full text PDF (UC library)	"Asymptomatic chest pain is most predictive of heart disease, with 79% of ASY patients having heart disease, highlighting the need for proactive screening."	asymptomatic highest	No	Yes (proactive screening)	also "atypical angina subtly reduces it"
+64	124	IEEE 2025	UCI 920 / Kaggle 1,025	full text PDF (UC library)	none from data (background: "typical angina is a classic symptom of coronary artery disease")	none	n/a	-	not included
+65	60	IEEE 2025	918 (fedesoriano)	full text PDF (UC library)	"asymptomatic (ASY) chest pain exhibited the highest rate of heart failure (79%) ... even the absence of classic chest pain can indicate a higher underlying risk"	asymptomatic highest	No	Yes	
+67	179	IEEE 2026	Kaggle	full text PDF (UC library)	none	none	n/a	-	not included
+68	161	IEEE 2026	Statlog 270	full text PDF (UC library)	"patient is considered at highrisk because of its age exceeding 60, type 4 of chest pains (asymptomatic) ... actionable information based on clinical knowledge"	asymptomatic -> high risk (illustrative decision path)	No	Yes (clinical knowledge)	illustrative example; sensitivity: exclude
+74	241	IEEE 2026	combined 5 sites (fedesoriano-style word labels)	full text PDF (UC library)	none from data (feature tables only)	none	n/a	-	not included
+75	135	IEEE 2025	Cleveland 303	full text PDF (UC library)	"68% of false negatives involved patients with non-specific chest pain (asymptomatic or atypical angina)" (error analysis only)	none	n/a	-	not included (error analysis, no risk direction)
+84	55	IEEE 2026	Cleveland 303	full text PDF (UC library)	"chest pain type (cp = 3) increase predicted risk" (single-patient SHAP, numeric only)	numeric only	not counted	-	not counted (as k70)
+104	220	IEEE 2026	303	full text PDF (UC library)	none	none	n/a	-	not included
+114	131	IEEE 2026	Kaggle	full text PDF (UC library)	none	none	n/a	-	not included
+132	240	IEEE 2026	Kaggle	full text PDF (UC library)	none	none	n/a	-	not included
+134	49	IEEE 2024	918 (fedesoriano)	full text PDF (UC library)	"atypical angina (ChestPainType_ATA) ..." contributes to lower risk; ATA "may be related to cardiac causes but does not meet all 3 criteria in the NICE guidelines"	ATA lower risk (middle category)	indeterminate	Yes (NICE criteria)	ATA = truly non-anginal; middle-category claim, not scored in primary count
+142	120	IEEE 2026	?	full text PDF (UC library)	none	none	n/a	-	not included
+144	103	IEEE 2026	Cleveland 303 (cp correlates +0.43 with target: Kaggle 303 heart.csv pattern)	full text PDF (UC library)	"angina being more common in disease patients and asymptomatic being more common in healthy individuals"	typical angina highest	Yes	n/a	stated direction is clinically correct; copy and label mapping unclear (r = +0.43 matches the Kaggle 303 copy, whose outcome is also reversed)
+6	217	ProQuest thesis (2026)	1,190 merge	full text PDF (UC ProQuest)	"Chest pain categories are mostly represented by non-anginal pain and asymptomatic cases" (prevalence only)	none	n/a	-	not included
+22	81	ProQuest thesis (2024)	Cleveland 303 + Z-Alizadeh Sani	full text PDF (UC ProQuest)	direction stated only for Z-Alizadeh Sani ("Typical and Atypical chest pain have the highest impact"), not for UCI data	none (UCI)	n/a	-	not included
+121	259	ProQuest thesis (2026)	Cleveland 297	full text PDF (UC ProQuest)	none	none	n/a	-	not included
+143	52	ProQuest thesis (2025)	several	full text PDF (UC ProQuest)	none (asymptomatic used only in the clinical sense)	none	n/a	-	not included
+112	59	Proc. HFES (Sage, 2024)	?	inaccessible (not in UC Sage package)	-	-	-	-	inaccessible
+126	12	Biomed. Eng. Comput. Biol. (Sage, 2026)	918 (fedesoriano)	full text	none (sex-specific prevalence only: males more often ASY or TA)	none	n/a	-	not included
+82	15	J. Big Data (2026)	Cleveland	full text	"chest-pain-type-non-anginal pain, and chest-pain-type-atypical angina as major contributors" (importance, no sign)	importance only	not counted	-	not counted (as k58)
+92	62	Int. J. Comput. Intell. Syst. (2026)	Cleveland 303	full text	none	none	n/a	-	not included
+110	22	Discover Computing (2026)	303 (source [26])	full text	"cp> 0.67 (typical angina) ... are strong signs of CVD"	typical angina -> CVD	Yes (as stated)	n/a	high normalised cp labelled typical angina; copy unverifiable; slope label ("slope > 0.50 (upsloping)") also inverted, so mapping is unreliable
+140	117	Discover Computing (2026)	Kaggle 1,025	full text	none	none	n/a	-	not included
+145	210	Int. J. Comput. Intell. Syst. (2026)	?	inaccessible (HTML abstract only; PDF behind bot challenge, not bypassed)	-	-	-	-	inaccessible
+94	110	Sci. Rep. (2024)	Cleveland 303 + private	full text	none ("asymptomatic" only as a clinical population)	none	n/a	-	not included
+107	29	Sci. Rep. (2026)	Cleveland 303 + Z-Alizadeh Sani	full text	none	none	n/a	-	not included
+138	0	Sci. Rep. (2026), cited 8	Cleveland (UCI codes)	full text	"The strongest contributor to the positive prediction was the chest pain type (cp = 4), typically associated with asymptomatic or severe angina, contributing +0.76"	asymptomatic (or severe angina) -> disease	No (hedged)	Yes (counterfactual: "reducing chest pain type" as an actionable intervention)	hedged wording; sensitivity: exclude
+148	189	Sci. Rep. (2025)	Kaggle	full text	none	none	n/a	-	not included
+100	79	Algorithms (MDPI, 2025)	Cleveland 303	full text	none	none	n/a	-	not included
+115	72	Algorithms (MDPI, 2026)	Kaggle	full text	none	none	n/a	-	not included
+124	108	Algorithms (MDPI, 2026)	Cleveland 303	full text	"for high values of these features [thal and cp] the model predicts the presence of cardiovascular disease" (numeric only)	numeric only	not counted	-	not counted (as k70)
+123	104	arXiv (2020)	Kaggle 303 / Cleveland	full text PDF	"This may seem counterintuitive, but asymptomatic chest pain is actually the most severe out of the four types, which leads the model to believe that the patient has a heart disease"	asymptomatic highest	No	Yes ("most severe" type)	counterfactual: chest pain "should belong to the recognizable (symptomatic) category"
+139	125	arXiv (2025)	Cleveland 303	full text PDF	none	none	n/a	-	not included
+109	178	Front. Digit. Health (2025)	Kaggle 303	full text	none	none	n/a	-	not included
+117	138	Front. Cardiovasc. Med. (2024)	918 (fedesoriano)	full text	"Of individuals diagnosed with CAD, 75.0% exhibit a 'flat' ST slope, 77.2% have a chest pain type of 'Asymptomatic'"	asymptomatic~CAD	No	No	same coding as k1/k20 (prevalence among CAD cases)
+129	148	Appl. Sci. (MDPI, 2026)	UCI 920	full text	none	none	n/a	-	not included
+130	231	BioMedInformatics (MDPI, 2025)	Cleveland 297	full text	"Cp, Exang and Slope have moderate positive relationships with the presence of heart disease" (numeric correlation only)	numeric only	not counted	-	not counted (as k70)
+41	229	J. Sci. Technol. (UST, 2025)	303	full text PDF	none	none	n/a	-	not included
+55	47	COMDEM (2026)	Cleveland 303 + 1,190	full text PDF	none	none	n/a	-	not included
+60	196	UHD J. Sci. Technol. (2025)	Kaggle 1,025 + 303	full text PDF	none	none	n/a	-	not included
+72	156	Int. J. Autom. Smart Technol. (2024)	Cleveland 303	full text PDF	none	none	n/a	-	not included
+87	4	Sinkron (2026)	Cleveland 303	full text PDF	"chest-pain types (particularly cp_4.0, representing asymptomatic chest pain) ... repeatedly appeared among the top features" (importance, no sign)	importance only	not counted	("clinically coherent subset")	not counted (as k58)
+101	214	ITEGAM-JETIA (2026)	303 (UCI)	full text PDF	none	none	n/a	-	not included
+105	228	J. Innov. Eng. Ind. Appl. (2026)	Cleveland 303	full text PDF	none	none	n/a	-	not included
+111	51	ISJ Trend (2026)	UCI 4 sites (n = 899)	full text	"Patients with CAD ... had significantly higher frequency of typical angina (42.2% vs. 6.6%)"; "Higher chest pain type values (typical angina) strongly increase CAD probability"	typical angina highest	Yes (as stated)	n/a	contradicts its own coding table (1 = typical angina ... 4 = asymptomatic), as k23
+113	119	SGS Eng. Sci. (2025)	Cleveland 303	full text PDF	single LIME case: "male patient presenting with atypical angina was predicted ... high cardiovascular risk"	single case, middle category	not counted	-	not counted
+125	215	Tehnicki vjesnik / hrcak (2026)	918 (IEEE Dataport 1,190 deduplicated)	full text PDF	none (chest pain type "highly associated with the target", no direction)	none	n/a	-	not included
+133	194	ITEGAM-JETIA (2026)	303	full text PDF	none	none	n/a	-	not included
+146	3	Appl. Med. Inform. (2024)	Cleveland 303	full text PDF	"asymptomatic cases being the most common (34.3% in training ...)" (prevalence only)	none	n/a	-	not included
+98	182	NCIRL MSc thesis (2025)	Kaggle 1,025	full text PDF	"a higher number of heart attacks with patients who had non-anginal chest pain, while asymptomatic associated with lower occurrences of heart attacks"	non-anginal highest, asymptomatic lowest	No (non-anginal named highest)	No	Kaggle 1,025 copy (0 = UCI 4, 3 = UCI 1, outcome reversed); typical angina not named highest
+81	160	Atlantis Press ICERIE (2025)	? (Kaggle or UCI; not stated in extracted text)	full text PDF	"Chest pain type was the most significant predictive factor, with typical angina having the greatest impact, while asymptomatic chest pain was the least."	typical angina highest	Yes (as stated)	n/a	"impact" (not signed risk); copy unclear
+40	145	Eng. Sci. (ES Publisher, 2022)	Cleveland 303	full text PDF	none from data (attribute table: "presence of typical angina makes the diagnosis ... much more likely")	none	n/a	-	not included (background, as k64)
+99	227	J. Future AI Technol. (2025)	Kaggle 1,025	full text PDF	none	none	n/a	-	not included
+91	132	J. Inf. Technol. Manag. (2025)	1,190 merge	full text PDF	"The most common type of chest pain is asymptomatic" (prevalence only)	none	n/a	-	not included (Scholar link pointed to a different article; full text found at article_101580)
+28	216	J. Comput. Commun. (SCIRP, 2025)	Cleveland 303 (Kaggle-style 0-3 labels)	full text PDF	none	none	n/a	-	not included
+83	27	Research Square (2025)	1,190 merge	full text PDF	none (importance only, no category)	none	n/a	-	not included
+128	147	Research Square (2025)	?	full text PDF	none	none	n/a	-	not included
+136	236	medRxiv (2025)	?	inaccessible (Cloudflare challenge; Europe PMC has no full text)	-	-	-	-	inaccessible
+147	181	medRxiv (2025)	?	inaccessible (Cloudflare challenge)	-	-	-	-	inaccessible
+93	45	bioRxiv (2025)	?	inaccessible (Cloudflare challenge; Europe PMC has no full text)	-	-	-	-	inaccessible
+88	37	Computers (MDPI, 2024)	Kaggle "heart attack" 303 copy (word labels; counts per class)	full text PDF	"among individuals who experienced heart attacks, those with typical and atypical angina were significantly more prevalent ... highlighting these as key indicators of heart attack risk"	typical/atypical angina highest	Yes (as stated)	n/a	counts (66 atypical, 40 typical) imply a re-labelled Kaggle copy whose outcome is also reversed; correct as stated, mapping unverifiable
+135	73	Sakarya Univ. J. Comput. Inf. Sci. (2023)	1,190 merge	full text PDF	"The most common type of chest pain is asymptomatic pain." (prevalence); cp "positive correlation" (numeric)	none	n/a	-	not included
+106	70	ADCAIJ (2023)	Kaggle 1,025	full text PDF	"Patients with asymptomatic chest pain type, which is encoded to 0 (blue color in the graph) are more likely to have heart disease."	asymptomatic highest	No	No	code 0 in the Kaggle 1,025 copy = UCI 4 = truly typical angina; paper labels it asymptomatic (Scholar link truncated: article 31228)
+45	23	SN Comput. Sci. (Springer)	?	inaccessible (paywall; UC library has no Springer subscription; abstract page only)	-	-	-	-	inaccessible
+53	114	Springer chapter	?	inaccessible (paywall; UC library has no Springer subscription; abstract page only)	-	-	-	-	inaccessible
+61	118	J. Supercomput. (Springer)	?	inaccessible (paywall; UC library has no Springer subscription; abstract page only)	-	-	-	-	inaccessible
+66	112	Health Inf. Sci. Syst. (Springer)	?	inaccessible (paywall; UC library has no Springer subscription; abstract page only)	-	-	-	-	inaccessible
+86	192	Biomed. Mater. Devices (Springer)	?	inaccessible (paywall; UC library has no Springer subscription; abstract page only)	-	-	-	-	inaccessible
+89	77	Springer chapter	?	inaccessible (paywall; UC library has no Springer subscription; abstract page only)	-	-	-	-	inaccessible
+90	63	Springer journal	?	inaccessible (paywall; UC library has no Springer subscription; abstract page only)	-	-	-	-	inaccessible
+96	9	Arab. J. Sci. Eng. (Springer)	?	inaccessible (paywall; UC library has no Springer subscription; abstract page only)	-	-	-	-	inaccessible
+11	18	ScienceDirect	?	inaccessible (ScienceDirect 'Are you a robot?' challenge; not bypassed)	-	-	-	-	inaccessible
+16	106	ScienceDirect (Data Knowl. Eng.)	?	inaccessible (ScienceDirect 'Are you a robot?' challenge; not bypassed)	-	-	-	-	inaccessible
+50	190	Biomed. Signal Process. Control (Elsevier)	?	inaccessible (ScienceDirect 'Are you a robot?' challenge; not bypassed)	-	-	-	-	inaccessible
+80	1	Comput. Biol. Med. (Elsevier)	?	inaccessible (ScienceDirect 'Are you a robot?' challenge; not bypassed)	-	-	-	-	inaccessible
+102	136	Healthcare Analytics (Elsevier, OA)	?	inaccessible (ScienceDirect 'Are you a robot?' challenge; not bypassed)	-	-	-	-	inaccessible
+108	165	Elsevier journal	?	inaccessible (ScienceDirect 'Are you a robot?' challenge; not bypassed)	-	-	-	-	inaccessible
+116	174	Elsevier chapter	?	inaccessible (ScienceDirect 'Are you a robot?' challenge; not bypassed)	-	-	-	-	inaccessible
+149	251	Elsevier chapter	?	inaccessible (ScienceDirect 'Are you a robot?' challenge; not bypassed)	-	-	-	-	inaccessible
+137	258	Univ. Padova BSc thesis (2025)	?	inaccessible to scripted retrieval (repository returns 403 to download; PDF viewer only)	-	-	-	-	inaccessible (technical)
+103	128	Int. J. Comput. Inf. Syst. Ind. Manag. Appl. (2025)	Cleveland 303	full text PDF (via EBSCO record -> DOI)	none	none	n/a	-	not included
+131	33	Ingénierie des Systèmes d'Information (IIETA, 2026)	? (UCI codes, CP Type 4)	full text PDF (via EBSCO record -> DOI)	"the actual diagnostic probability ... is substantially increased due to specific clinical profile variables in red such as being asymptomatic (CP Type 4)"	asymptomatic -> disease (single-patient SHAP)	No	No	single-patient explanation naming the category (as k138)
+25	8	ResearchGate	?	inaccessible (ResearchGate bot check, blank page; not bypassed)	-	-	-	-	inaccessible
+51	11	ResearchGate	?	inaccessible (ResearchGate bot check, blank page; not bypassed)	-	-	-	-	inaccessible
+77	42	ResearchGate	?	inaccessible (ResearchGate bot check, blank page; not bypassed)	-	-	-	-	inaccessible
+118	69	ResearchGate	?	inaccessible (ResearchGate bot check, blank page; not bypassed)	-	-	-	-	inaccessible
+120	203	ResearchGate	?	inaccessible (ResearchGate bot check, blank page; not bypassed)	-	-	-	-	inaccessible
+141	238	ResearchGate	?	inaccessible (ResearchGate bot check, blank page; not bypassed)	-	-	-	-	inaccessible
+4	211	Comput. Methods Biomech. Biomed. Eng. (T&F)	?	inaccessible (subscription; not in UC library A-Z; abstract page or bot check only)	-	-	-	-	inaccessible
+48	152	Comput. Methods Biomech. Biomed. Eng. (T&F)	?	inaccessible (subscription; not in UC library A-Z; abstract page or bot check only)	-	-	-	-	inaccessible
+79	159	Concurr. Comput. Pract. Exp. (Wiley)	?	inaccessible (subscription; not in UC library A-Z; abstract page or bot check only)	-	-	-	-	inaccessible
+85	102	Comput. Intell. (Wiley)	?	inaccessible (subscription; not in UC library A-Z; abstract page or bot check only)	-	-	-	-	inaccessible
+49	78	World Scientific	?	inaccessible (subscription; not in UC library A-Z; abstract page or bot check only)	-	-	-	-	inaccessible
+14	127	Proc. SPIE	?	inaccessible (subscription; not in UC library A-Z; abstract page or bot check only)	-	-	-	-	inaccessible
+122	101	IGI Global chapter	?	inaccessible (subscription; not in UC library A-Z; abstract page or bot check only)	-	-	-	-	inaccessible
+95	89	IJATCSE via academia.edu (2022)	?	inaccessible (academia.edu login wall)	-	-	-	-	inaccessible
+97	200	Google Books chapter	?	inaccessible (Google Books preview)	-	-	-	-	inaccessible
+127	82	BRAC Univ. thesis (2022)	Kaggle heart-attack 303 (0 = typical ... 3 = asymptomatic)	full text PDF	none	none	n/a	-	not included
+78	235	Adv. Eng. Sci. (2026)	?	inaccessible (site returns HTTP 500 / blank)	-	-	-	-	inaccessible
+119	44	CAPDR conference (2024)	?	inaccessible (page blank; PDF link dead)	-	-	-	-	inaccessible
+44	41	DiVA thesis (2020)	?	inaccessible (DiVA bot check did not clear; not bypassed)	-	-	-	-	inaccessible
+27	260	Univ. of Benin thesis (2026)	Cleveland 303 (Kaggle-style 0-3 labels)	full text PDF (retry succeeded)	none	none	n/a	-	not included

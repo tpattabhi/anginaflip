@@ -1,0 +1,12 @@
+# Copied from the Kaggle commit log, notebook tejaspattabhi/notebookf8919166ab (private), 18 Nov 2026 ~02:35 PST
+5300.4s unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit 2605s scoring yes/no token ids 9642 2822
+model template auc_D auc_C auc_O d_auc_C_minus_D d_auc_lo d_auc_hi d_log_loss_C_minus_D d_log_loss_lo d_log_loss_hi
+Meta-Llama-3.1-8B-Instruct-bnb-4bit full 0.512 0.589 0.477 0.077 0.043 0.114 -0.110 -0.139 -0.082
+Meta-Llama-3.1-8B-Instruct-bnb-4bit minimal 0.542 0.779 0.626 0.238 0.145 0.338 -0.846 -1.003 -0.700
+model template condition 1 2 3 4   (mean P(Yes) by UCI cp code)
+Meta-Llama-3.1-8B-Instruct-bnb-4bit full C 0.125 0.102 0.095 0.158
+Meta-Llama-3.1-8B-Instruct-bnb-4bit full D 0.214 0.098 0.100 0.107
+Meta-Llama-3.1-8B-Instruct-bnb-4bit full O 0.196 0.133 0.132 0.153
+Meta-Llama-3.1-8B-Instruct-bnb-4bit minimal C 0.022 0.017 0.061 0.290
+Meta-Llama-3.1-8B-Instruct-bnb-4bit minimal D 0.289 0.059 0.017 0.022
+Meta-Llama-3.1-8B-Instruct-bnb-4bit minimal O 0.132 0.113 0.121 0.124

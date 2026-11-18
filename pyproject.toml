@@ -1,0 +1,15 @@
+[project]
+name = "anginaflip"
+version = "0.1.0"
+description = "Evidence and analyses for the reversed chest-pain coding in the UCI Heart Disease data"
+requires-python = ">=3.11"
+dependencies = ["numpy", "pandas", "scikit-learn"]
+
+[dependency-groups]
+dev = ["pytest", "black", "nbformat", "pypdf"]
+
+[tool.black]
+line-length = 120
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

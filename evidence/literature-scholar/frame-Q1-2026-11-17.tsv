@@ -1,0 +1,270 @@
+idx	year	cites	title_truncated	venue	link
+0	2026	8	Advancing cardiovascular disease diagnosis with an interpretable and r	nature.com	nature.com/articles/s41598-026-35451-3
+1	2025	12	SmartHeart: a conceptual framework for explainable machine learning in	Elsevier	sciencedirect.com/science/article/pii/S0010482525015744
+2	2025	23	Heart disease prediction using ensemble tree algorithms: A supervised	Wiley Online Library	onlinelibrary.wiley.com/doi/abs/10.1155/acis/1989813
+3	2024	30	Advanced machine learning techniques for predicting heart disease: A c	ami.info.umfcluj.ro	ami.info.umfcluj.ro/index.php/AMI/article/view/1060
+4	2026	4	Heart Disease Classification Using Optimised XGBoost and Random Forest	jurnal.polgan.ac.id	jurnal.polgan.ac.id/index.php/sinkron/article/view/15544
+5	2025	7	Heart disease prediction by tabular modeling with deep learning networ	iopscience.iop.org	iopscience.iop.org/article/10.1088/2632-2153/adfd39/meta
+6	2026	1	A Feature-Optimized Hybrid Supervised Ensemble Learning Framework for	openurl.ebsco.com	openurl.ebsco.com/contentitem/gcd:196922276
+7	2026	0	Comparative and Explainable Machine Learning for Coronary Artery Disea	mdpi.com	mdpi.com/3042-6707/1/4/31
+8	2025	3	Heart disease risk prediction using machine learning and explain	researchgate.net	researchgate.net/profile/Mdfaishal-Ahmed-Rudro/publication/3
+9	2026	1	Ameliorating Predictive Performance of Digital Features Using Hybrid N	Springer	link.springer.com/article/10.1007/s13369-025-10822-6
+10	2025	0	Advancing Cardiovascular Disease Diagnosis: A Robust ML Ecosystem Inte	medrxiv.org	medrxiv.org/content/10.1101/2025.06.17.25329798.abstract
+11	2030	0	An Explainable AI Approach to Heart Disease Prediction with Ense		researchgate.net/profile/Machanuru-Suresh-Babu/publication/3
+12	2026	1	Leveraging Clinical Data for Early Heart Disease Prediction: A Machine	journals.sagepub.com	journals.sagepub.com/doi/abs/10.1177/11795972261446822
+13	2026	6	Explainable soft-voting classifier for heart disease prediction using	Springer	link.springer.com/article/10.1007/s10791-026-09972-4
+14	2026	0	Comparative Evaluation of Machine Learning and Deep LearningApproaches	jccair.org	jccair.org/index.php/jcai/article/view/35
+15	2026	13	CardiaTics: An explainable AI integrated heart disease diagnosis model	Springer	link.springer.com/article/10.1186/s40537-026-01395-8
+16	2026	4	Machine Learning for Coronary Heart Disease Prediction: Compara	mdpi.com	mdpi.com/2673-3986/7/3/75
+17	2022	10	Finding the influential clinical traits that impact on the diagnosis o	nature.com	nature.com/articles/s41598-022-24633-4
+18	2026	8	Explainable machine learning for early heart disease risk predi	Elsevier	sciencedirect.com/science/article/pii/S2666521226000104
+19	2026	0	Machine Learning and Explainable Artificial Intelligence for Early Hea	openurl.ebsco.com	openurl.ebsco.com/contentitem/gcd:196809528
+20	2026	0	An Explainable Genetic Algorithm-Optimized Weighted Soft Voting Framew		preprints.org/manuscript/202610.1491
+21	2024	0	Effective Prediction of Cardiovascular Diseases Based on Multiple Clin	psvmkendra.com	psvmkendra.com/index.php/journal/article/view/1783
+22	2026	13	Explainable ensemble learning model for cardiovascular disease predict	Springer	link.springer.com/article/10.1007/s10791-026-09930-0
+23	2025	6	Implementing a heart disease prediction model with explainable machine	Springer	link.springer.com/article/10.1007/s42979-025-04409-z
+24	2025	2	A meta-learning model for mortality prediction in patients with chroni	Elsevier	sciencedirect.com/org/science/article/pii/S152614922500387X
+25	2025	0	Predictive Modelling of Heart Disease Risk Using Hybrid Ensemble Learn	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11264948/
+26	2025	0	Heart Disease Diagnosis Model Based on Machine Learning	dl.acm.org	dl.acm.org/doi/abs/10.1145/3777577.3777711
+27	2025	4	An explainable self-supervised learning framework for interpreta	assets-eu.researchsquare.com	assets-eu.researchsquare.com/files/rs-7890495/v1_covered_c49
+28	2025	0	X-Heart: A Hybrid Explainable AI Framework Integrating Genetic Algorit	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11225282/
+29	2026	12	An explainable AI-driven hybrid feature selection approach for coronar	nature.com	nature.com/articles/s41598-026-41712-y
+30	2026	0	Explainable Predictions of Cardiovascular Disease Risks Using Ma		valoria.estin.dz/records/82d4500d-0dc2-4a32-bd38-57d7144fc38
+31	2026	0	Comparative Performance Analysis of Machine Learning Algorithms for Ea	openurl.ebsco.com	openurl.ebsco.com/contentitem/gcd:195218167
+32	2025	1	Predicting Heart Disease using Machine Learning Approach	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11176573/
+33	2026	0	BioXAI-HeartNet: An Explainable and Adversarially Robust Deep Learning	openurl.ebsco.com	openurl.ebsco.com/contentitem/gcd:196575145
+34	2026	0	Fairness-Aware Heart Disease Prediction Using Machine Learning: Binary	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11661904/
+35	2025	3	Enhancing heart disease diagnosis with xai-infused ensemble classifica	api.taylorfrancis.com	api.taylorfrancis.com/content/chapters/edit/download
+36	2026	0	A Dual Explainability Framework for Cardiovascular Disease Prediction	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11715511/
+37	2024	35	Application of deep learning for heart attack prediction with e	mdpi.com	mdpi.com/2073-431X/13/10/244
+38	2024	81	XAI-augmented voting ensemble models for heart disease predicti	mdpi.com	mdpi.com/2306-5354/11/10/1016
+39	2025	0	Exploring Heart-Disease Risk Factors with Random Forest Analysis and S	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11179233/
+40	2025	3	An Explainable AI Approach to Heart Disease Prediction with Ensemble M	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11233466/
+41	2020	0	Research on a Heart Disease Prediction Model Based on the Stacking Pri		diva-portal.org/smash/record.jsf
+42	2025	0	Comparison of Machine Learning Algorithms for Personalized Healt	researchgate.net	researchgate.net/profile/Ayodeji-Jubril-Alabi/publication/39
+43	2026	1	Comparative Performance Analysis of Machine Learning Algorithms for Ea	avesis.yildiz.edu.tr	avesis.yildiz.edu.tr/yayin/c768de45-5989-4a37-8596-ab3eee31a
+44		0	" Predicting Heart Attack Risk Using Machine Learning: A Compara	capdr.org	capdr.org/wp-content/uploads/2024/12/125.-Kusumanjali-and-Bh
+45	2025	6	Explainable AI Based Coronary Heart Disease Prediction: Enhancing Mode	biorxiv.org	biorxiv.org/content/10.1101/2025.03.20.644456.abstract
+46	2025	0	Early Detection of Heart Disease using Machine Learning Techniques	stmjournals.celnet.in	stmjournals.celnet.in/rrjobi/2025/early-detection-of-heart-d
+47	2026	0	An Interpretable Hybrid Subtractive Clustering–Based Adaptive Neuro-Fu	comdem.org	comdem.org/index.php/comdem/article/view/18676
+48	2026	0	A Recall-Oriented Comparative Evaluation of Machine Learning Models fo	afropolitanjournals.com	afropolitanjournals.com/index.php/ajastr/article/view/1707
+49	2024	18	Optimized clinical feature analysis for improved cardiovascular diseas	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/10416342/
+50	2026	0	Shap2nam: An Interpretable Hybrid Machine Learning Model for Heart Dis	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11763348/
+51	2026	1	A Cost-Aware and Calibrated Explainable AI Framework for Equitable Cor	isjtrend.com	isjtrend.com/article_241714.html
+52	2025	4	Multimodal Deep Learning Algorithms for Predictive Modeling of Cardiov		search.proquest.com/openview/120cdcd6bd2770b90001f6bb2b1ec11
+53	2026	0	Leveraging deep learning for accurate heart disease prediction: An ana	pubs.aip.org	pubs.aip.org/aip/acp/article-abstract/3345/1/020230/3376776
+54	2026	1	XAI in Heart Disease: A Review of Concepts, Applications and Limitatio	Springer	link.springer.com/article/10.1007/s11831-026-10621-8
+55	2026	0	CardioShield: An Explainable Random Forest Framework for Confidence-Aw	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11744959/
+56		0	Rheocor v3. 0	rheocor.com	rheocor.com/static/rheocorpaper.pdf
+57	2026	0	Explainable Machine Learning for Predicting Major Adverse Renal	medinform.jmir.org	medinform.jmir.org/2026/1/e96654/
+58	2025	1	In-depth analysis, model optimization, and interpretability of heart d	dl.acm.org	dl.acm.org/doi/abs/10.1145/3759928.3759957
+59	2024	3	Toward user-centered explainable displays for complex machine learning	journals.sagepub.com	journals.sagepub.com/doi/abs/10.1177/10711813241264252
+60	2025	0	CardioLogicX: An Explainable High-Performance Model for Heart Failure	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11232824/
+61	2026	3	A Deep Learning‐Based DenseEchoNet Framework With eXplainable Artifici	Wiley Online Library	onlinelibrary.wiley.com/doi/abs/10.1002/ima.70268
+62	2026	0	CardioEnsemNet: An Optimized Ensemble Learning Framework for Acc	Springer	link.springer.com/content/pdf/10.1007/s44196-026-01451-4_ref
+63	2026	0	An effective prediction model for heart failure: feature selection bas	Springer	link.springer.com/article/10.1007/s42454-026-00112-3
+64	2026	0	Drift-Aware Explainable Boosting Machine for Interpretable Heart Disea	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11479260/
+65	2024	17	Explainable ensemble learning models for early detection of heart dise	journal.umy.ac.id	journal.umy.ac.id/index.php/jrc/article/view/22448
+66	2026	0	Machine learning prediction of obstructive coronary artery disease usi	arxiv.org	arxiv.org/abs/2605.21762
+67	2026	0	Hybrid data balancing and ensemble learning with SHAP-based explainabi	journals.sagepub.com	journals.sagepub.com/doi/abs/10.1177/20552076261495983
+68	2024	5	Interpretable heart disease detection model for IoT-enabled WBAN syste	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/10817506/
+69	2025	0	Heart Disease Prediction Using Machine Learning Algorithms		researchgate.net/profile/Sujal-Karnwal/publication/404698952
+70	2023	8	Explainable heart disease diagnosis with supervised learning methods	revistas.usal.es	revistas.usal.es/cinco/index.php/2255-2863/article/view/3122
+71	2026	5	Stacked Ensemble Model With Explainable AI for Early Detection of Hear	Wiley Online Library	chemistry-europe.onlinelibrary.wiley.com/doi/abs/10.1002/ans
+72	2026	0	Interpretable Heart Disease Prediction: Optimizing Machine Lear	mdpi.com	mdpi.com/1999-4893/19/9/788
+73	2023	8	Prediction of cardiovascular disease based on voting ensemble model an	dergipark.org.tr	dergipark.org.tr/en/pub/saucis/issue/81848/1367326
+74	2026	0	Clinically Translatable Uncertainty-Aware Machine Learning for Cardiov	medrxiv.org	medrxiv.org/content/10.64898/2026.09.18.26363375.abstract
+75	2025	50	Comparison and Performance Assessment of Intelligent ML Models for For	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11136005/
+76	2025	9	Composite socio-environmental risk score for cardiovascular ass	Elsevier	sciencedirect.com/science/article/pii/S2666667725000364
+77	2026	0	Explainable Machine Learning Approaches for Cardiovascular Disease Det	Springer	link.springer.com/chapter/10.1007/978-3-032-07267-2_5
+78	2026	0	Leakage-Aware and Reproducible Comparison of Eight Machine Learning Cl	World Scientific	worldscientific.com/doi/abs/10.1142/S2811007226500318
+79	2025	8	Explainable AI for Coronary Artery Disease Stratification Using	mdpi.com	mdpi.com/1999-4893/18/11/693
+80	2026	0	A HYBRID CNN–LSTM WITH XAI FOR HEART-DISEASE PREDICTION USING MULTI-DA	advancedengineeringscience.com	advancedengineeringscience.com/index.php/aes/article/view/83
+81	2024	2	Enhanced Computational Methods for Detection and Interpretation of Hea		search.proquest.com/openview/9edf35810f70558ca28d40317806c74
+82	2022	6	Heart attack prediction using machine learning and XAI		dspace.bracu.ac.bd/xmlui/handle/10361/18012
+83	2025	19	We-xai: explainable ai for cvd prediction using weighted feature selec	Springer	link.springer.com/article/10.1007/s13721-025-00508-2
+84	2026	0	Predicting Cardiovascular Disease with Ensemble and Calibration-Aware	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11546144/
+85	2025	15	Impact of feature selection and feature engineering in prediction of c	Elsevier	sciencedirect.com/science/article/pii/S0010482525013794
+86	2025	3	Early diagnosis of cardiac disorders using machine learning-based deci	pfmjournal.org	pfmjournal.org/journal/view.php
+87	2026	14	Heart disease prediction using artificial intelligence algorithms: A c	verjournal.com	verjournal.com/index.php/ver/article/view/1670
+88	2025	1	Comprehensive Analysis of Machine Learning Algorithms for Predic		assets-eu.researchsquare.com/files/rs-6398275/v1_covered_77e
+89	2022	0	IoT and Machine Learning approach for Early Heart disease Predic	academia.edu	academia.edu/download/88700985/ijatcse101132022.pdf
+90	2026	0	Application of the Explainable Boosting Machine (EBM) in Heart Failure	Springer	link.springer.com/chapter/10.1007/978-3-032-38939-8_21
+91	2026	0	Explainable AI for Heart Failure on AWS: A Scalable Big Data Approach	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11499938/
+92	2026	1	Interpretable hybrid metaheuristic optimization with iteration-	Springer	link.springer.com/article/10.1007/s44443-026-00868-3
+93	2023	256	Advanced machine learning techniques for cardiovascular disease early	Springer	link.springer.com/article/10.1186/s40537-023-00817-1
+94	2024	125	Predicting heart diseases using machine learning and different data cl	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/10620208/
+95	2026	0	Cardiovascular disease prediction and mortality risk assessment using	Springer	link.springer.com/article/10.1186/s12911-026-03865-8
+96	2024	11	Centralized and federated heart disease classification models using uc	arxiv.org	arxiv.org/abs/2408.06183
+97		0	Design and Development of a Model for Heart Disease Prediction using M	api.taylorfrancis.com	api.taylorfrancis.com/content/chapters/edit/download
+98	2025	0	Heart Attack Risk Prediction Using Logistic Regression and Risk Factor	Springer	link.springer.com/chapter/10.1007/978-3-032-20606-0_11
+99	2025	58	Effectiveness of machine learning models in diagnosis of heart disease	nature.com	nature.com/articles/s41598-025-09423-y
+100	2025	107	A systematic review of machine learning in heart disease prediction	journals.tubitak.gov.tr	journals.tubitak.gov.tr/biology/vol49/iss5/9/
+101	2026	0	A Study and Analysis of the Performance of Supervised Algorithms for D	igi-global.com	igi-global.com/chapter/a-study-and-analysis-of-the-performan
+102	2025	3	A Manifold Learning‐Based Anomaly Detection Framework for Cardiovascul	Wiley Online Library	onlinelibrary.wiley.com/doi/abs/10.1111/coin.70130
+103	2026	0	Enhancing the Prediction of Heart Disease by Optimization of Features	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11590528/
+104	2011	188	Explainable ai meets healthcare: A study on heart disease dataset	arxiv.org	arxiv.org/abs/2011.03195
+105	2026	0	Explainable AI for Early Disease Risk Prediction		ijsrem.com/download/explainable-ai-for-early-disease-risk-pr
+106	2024	37	An explainable machine learning approach for automated medical	Elsevier	sciencedirect.com/science/article/pii/S0169023X24000636
+107	2021	61	An accurate fuzzy rule-based classification systems for heart d	Elsevier	sciencedirect.com/science/article/pii/S2468227621003203
+108	2026	0	An Optimized PSO-PNN Hybrid Model for Enhancing Diagnostic Accu	mdpi.com	mdpi.com/1999-4893/19/8/705
+109	2026	14	A novel hybrid metaheuristic for optimizing deep CNN hyperparameters t	Springer	link.springer.com/article/10.1007/s10586-025-05892-y
+110	2024	223	A proposed technique for predicting heart disease using machine learni	nature.com	nature.com/articles/s41598-024-74656-2
+111	2026	1	Meta-cluster driven ensemble learning with cluster-augmented features	nature.com	nature.com/articles/s41598-026-63424-z
+112	2025	39	CardioTabNet: a novel hybrid transformer model for heart disease predi	Springer	link.springer.com/article/10.1007/s13755-025-00361-7
+113	2025	0	Exploring Machine Learning Techniques for Predicting Brain Stroke from	books.google.com	books.google.com/books
+114	2025	0	Generative-Augmented Cardiovascular Prognostics via Machine Learning	Springer	link.springer.com/chapter/10.1007/978-981-96-8043-6_45
+115	2026	1	A multi-view autoencoder architecture with self-adaptive feature recal	nature.com	nature.com/articles/s41598-026-53138-7
+116	2026	0	A Hybrid Machine Learning and SLM-Based System for Heart Disease Predi	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11689170/
+117	2026	2	Unified approach for accurate heart disease prediction using machine l	Springer	link.springer.com/article/10.1007/s10791-026-09979-x
+118	2023	79	XAI–reduct: accuracy preservation despite dimensionality reduction for	Springer	link.springer.com/article/10.1007/s11227-023-05356-3
+119	2025	2	Predicting cardiovascular risk with hybrid ensemble learning and xai	spast.org	spast.org/techrep/article/view/5661
+120	2025	0	AI-Driven Heart Disease Prediction Using the XGBoost Ensemble Learning	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11548393/
+121	2026	0	… , Hospital Shift and Missingness Shortcuts: A Leakage Audit an		researchgate.net/profile/Muzammal-Hussain-8/publication/4177
+122	2023	5	Unveiling the contributing features in heart disease occurrence: an ex	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/10270542/
+123		0	[C] Enhanced Heart Disease Prediction Using Machine Learning with Tige
+124	2025	4	Centralized and federated heart disease classification using UCI datas	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11044926/
+125	2025	39	Feature selection strategies for optimized heart disease diagnosis usi	arxiv.org	arxiv.org/abs/2503.16577
+126	2025	10	Using convolutional neural networks with late fusion to predict heart	nature.com	nature.com/articles/s41598-025-25100-6
+127	2026	0	Deep learning in multiparameter heart disease prediction model	spiedigitallibrary.org	spiedigitallibrary.org/conference-proceedings-of-spie/14182/
+128	2025	10	Comparative Analysis of Computational Intelligence Techniques for Pred	openurl.ebsco.com	openurl.ebsco.com/contentitem/gcd:191198950
+129		0	HEART DISEASE RISK PREDICTION USING MACHINE LEARNING	ijsrmes.com	ijsrmes.com/uploads/papers/IJSRMES2026S23-20260914100712.pdf
+130	2025	2	MLP Model Optimization for Heart Attack Risk Prediction: A Systematic	jurnal.polgan.ac.id	jurnal.polgan.ac.id/index.php/sinkron/article/view/15027
+131	2025	1	Heart Disease Prediction Through Health Record Analysis Using Ensemble	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11400391/
+132	2025	16	Predicting heart disease using automated machine learning based on gen	jitm.ut.ac.ir	jitm.ut.ac.ir/article_53318_7227.html
+133	2025	1	Simplifying cardiovascular risk prediction: cost-aware machine learnin	…	journalofemergingtechnologyanddigitaltransformation.com/inde
+134	2025	24	Transfer learning-based hybrid VGG16-machine learning approach for hea	frontiersin.org	frontiersin.org/journals/artificial-intelligence/articles/10
+135	2025	0	Fusion-Driven Ensemble Learning Method for Proactive Heart Disease Dia	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11341350/
+136	2025	3	A bio-inspired approach to feature optimization for ischemic he	Elsevier	sciencedirect.com/science/article/pii/S2772442525000462
+137	2026	0	Heart Disease Detection and Classification Using Ensemble Technique	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11575789/
+138	2024	48	Explainable coronary artery disease prediction model based on AutoGluo	frontiersin.org	frontiersin.org/journals/cardiovascular-medicine/articles/10
+139	2025	1	Dynamic Heart Disease Prediction Using Hybrid CNN-LSTM Deep Learning w	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11404438/
+140	2026	0	Hybrid similarity measure-based feature selection and optimally driven	Springer	link.springer.com/article/10.1007/s00521-026-12170-4
+141	2025	0	Exploring Machine Learning Techniques for Predicting Brain Stroke from	Springer	link.springer.com/chapter/10.1007/978-3-031-82516-3_2
+142	2025	1	Soft Voting Ensemble for Heart Disease Detection Using RF, CatBoost, a	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11446533/
+143	2025	91	A comprehensive review on heart disease risk prediction using machine	Springer	link.springer.com/article/10.1007/s11831-024-10194-4
+144	2026	0	The Advanced Health Risk Predictor: Ensemble Machine Learning System f	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11569537/
+145	2022	33	Ischemic heart disease multiple imputation technique using machine lea	espublisher.com	espublisher.com/journals/articledetails/681/
+146	2026	1	Impact of Feature Engineering on Machine Learning Models for Heart Dis	Wiley Online Library	onlinelibrary.wiley.com/doi/abs/10.1002/eng2.70566
+147	2025	0	Multi-View Autoencoder Framework with Feature Recalibration and		assets-eu.researchsquare.com/files/rs-8256525/v1/29a1dd9e-85
+148	2026	0	Hybrid Ensemble and Imbalance-Aware Machine Learning for Multi-	mdpi.com	mdpi.com/2076-3417/16/17/8662
+149	2025	5	Explainable AI methods to increase trustworthiness in healthcare	Elsevier	sciencedirect.com/science/chapter/edited-volume/pii/B9780443
+150	2021	0	Scientific African		app.cafeprozhe.com/storage/files/project/r3gNxHGt65GONnUR39Y
+151	2025	1	Heart disease prediction using ML and ensemble models: a comprehensive	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11013804/
+152	2026	5	Dynamic feature selection and quantum representation for precise heart	Taylor & Francis	tandfonline.com/doi/abs/10.1080/10255842.2025.2456990
+153	2025	35	… interpolation, median imputation, RobustScalar, and particle swarm o	frontiersin.org	frontiersin.org/journals/medicine/articles/10.3389/fmed.2025
+154		0	Beyond single-split accuracy: a leakage-free, multi-centre evaluation	papers.ssrn.com	papers.ssrn.com/sol3/papers.cfm
+155	2025	26	Toward precision cardiology: a transformer-based system for adaptive p	Springer	link.springer.com/article/10.1007/s00521-025-11172-y
+156	2024	2	A Comprehensive Approach to Heart Disease Analysis Using Machine Learn	jausmt.org	jausmt.org/index.php/jausmt/article/view/31
+157	2026	0	A Fuzzy Rule-Based Decision Framework with Conflict Index Analy	mdpi.com	mdpi.com/2227-7390/14/19/3500
+158	2026	0	A Machine Learning-Based Heart Disease Prediction and Personalized Rec	papers.ssrn.com	papers.ssrn.com/sol3/papers.cfm
+159	2025	15	Healthedgeai: Gai and xai based healthcare system for sustainable edge	Wiley Online Library	onlinelibrary.wiley.com/doi/abs/10.1002/cpe.70057
+160	2025	0	Enhancing Heart Attack Forecasting Using Machine Learning Models	atlantis-press.com	atlantis-press.com/proceedings/icerie-25/126018257
+161	2026	0	Comparison Feature Optimized Machine Learning to Improve Heart Disease	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11518838/
+162	2026	2	Accelerating the performance of machine learning classifiers using bac	journals.sagepub.com	journals.sagepub.com/doi/abs/10.1177/20552076261443069
+163	2026	0	Conceptualising heart disease prediction through a unified framework c	Springer	link.springer.com/article/10.1007/s44163-026-02010-8
+164	2026	0	Enhancing the Accuracy of Heart Disease Through Hippopotamus Optimizat	books.google.com	books.google.com/books
+165	2026	0	Stacked Ensemble Framework for CAD Pre-Screening: Multi-Dataset Clinic	Elsevier	sciencedirect.com/science/article/pii/S3050475926007992
+166	2026	0	Hybrid Stacking Ensemble Model for Cardiovascular Disease Risk Predict	Springer	link.springer.com/chapter/10.1007/978-3-032-28310-8_12
+167	2026	0	A Hybrid Predictive Ensemble of Machine Learning and Deep Neural Netwo	arxiv.org	arxiv.org/abs/2609.05146
+168	2026	1	Heart Disease Detection with Machine Learning Algorithms		assets-eu.researchsquare.com/files/rs-8484872/v1/bb39e265-54
+169	2025	1	Tree-Structured Parzen Estimator-Based Optimization in Stacking Ensemb	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11425174/
+170	2025	0	Technology and Infrastructure for XAI in Healthcare	api.taylorfrancis.com	api.taylorfrancis.com/content/chapters/edit/download
+171	2024	0	Predictive Modeling of Coronary Artery Disease Using Neural Net-		nhsjs.com/wp-content/uploads/2024/12/Predictive-Modeling-of-
+172	2024	2	Improving Heart Disease Prediction with Stacked Ensemble Learning: A C	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/10863760/
+173	2024	35	Cloud computing-based framework for heart disease classificatio	degruyterbrill.com	degruyterbrill.com/document/doi/10.1515/jisys-2023-0261/html
+174	2020	29	Interpretable artificial intelligence: Closing the adoption gap in hea	Elsevier	sciencedirect.com/science/chapter/edited-volume/pii/B9780128
+175	2025	0	4 Technology and	books.google.com	books.google.com/books
+176	2025	0	A Review of Machine Learning and Deep Learning Techniques for Heart Di	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11253993/
+177	2025	0	Learning with Limited Data: A Machine Learning Approach for Heart Dise	books.google.com	books.google.com/books
+178	2025	27	Enhancing heart disease prediction with stacked ensemble and MCDM-base	frontiersin.org	frontiersin.org/journals/digital-health/articles/10.3389/fdg
+179	2026	0	XAICab: An Explainable AI Framework Integrating CatBoost and SVM-SMOTE	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11651199/
+180	2023	8	Enhancing cardiovascular disease prediction: a domain knowledge-		assets-eu.researchsquare.com/files/rs-3068941/v1/945cd2f8-fe
+181	2025	1	Benchmarking transformer-based and conventional machine learning model	medrxiv.org	medrxiv.org/content/10.1101/2025.08.03.25332878.abstract
+182	2025	0	Optimising Heart Attack Prediction: Comparing Deep Learning and Tradit		norma.ncirl.ie/8665/
+183	2015	30	Association of left ventricular diastolic dysfunction with subclinical	jstage.jst.go.jp	jstage.jst.go.jp/article/jat/22/12/22_29454/_article/-char/j
+184	2025	20	A robust stacking-based ensemble model for predicting cardiovas	mdpi.com	mdpi.com/2673-2688/6/7/160
+185	2025	0	Optimized Cardiovascular Disease Prediction Using Stochastic L1 Regula	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11436636/
+186	2024	0	Predictive Modeling of Coronary Artery Disease Using Neural Net	nhsjs.com	nhsjs.com/2024/predictive-modeling-of-coronary-artery-diseas
+187	2026	1	An Explainable Deep Learning Framework Integrated with Fuzzy Multi-Cri	jidmis.org	jidmis.org/index.php/jidmis/article/view/2522
+188	2026	0	Advanced Cardiovascular Risk Stratification Using Hybrid Ensemble Lear	books.google.com	books.google.com/books
+189	2025	1	Prioritization of patients at risk of heart attack using a novel full-	nature.com	nature.com/articles/s41598-025-26470-7
+190	2025	3	CNN with ISNet-based healthcare monitoring system for heart disease pr	Elsevier	sciencedirect.com/science/article/pii/S174680942500850X
+191	2026	0	EVALUATION OF DECISION TREES, NAÏVE BAYES, AND SUPPORT VECTOR MACHINES	geneticsmr.com	geneticsmr.com/index.php/gmr/article/view/1059
+192	2026	8	Enhancing heart disease diagnosis with meta-heuristic algorithms: A co	Springer	link.springer.com/article/10.1007/s44174-025-00288-3
+193	2026	3	Early diagnosis of cardiovascular disease using stacking ensemble augm	Springer	link.springer.com/article/10.1007/s44379-026-00065-z
+194	2026	3	Machine Learning for Coronary Heart Disease Risk Prediction: A Convent	itegam-jetia.org	itegam-jetia.org/journal/index.php/jetia/article/view/2753
+195	2024	0	Learning with Limited Data: A Machine Learning Approach for Heart Dise	Springer	link.springer.com/chapter/10.1007/978-3-031-98138-8_1
+196	2025	7	Improving cardiovascular disease prediction through stratified machine	journals.uhd.edu.iq	journals.uhd.edu.iq/index.php/uhdjst/article/view/1447
+197		0	In Silico Research in Biomedicine	researchgate.net	researchgate.net/profile/Md-Nazmul-Dipu-2/publication/399085
+198	2024	75	Intelligent cardiovascular disease diagnosis using deep learning enhan	nature.com	nature.com/articles/s41598-024-71932-z
+199	2020	3	Interpretable the adoption gap artificial in healthcare☆ intelligence:	books.google.com	books.google.com/books
+200	2025	2	8 Automated Cardiovascular Disease Prediction Using Ant Colony Optimiz	books.google.com	books.google.com/books
+201	2026	0	Leakage-Safe benchmarking of tempered fractional optimization and swar	journals.sagepub.com	journals.sagepub.com/doi/abs/10.1177/1088467X261484827
+202	2022	170	XAI framework for cardiovascular disease prediction using class	mdpi.com	mdpi.com/2079-9292/11/24/4086
+203	2026	0	A Modified Gorilla Troops Optimizer-Based Explainable Machine Le		researchgate.net/profile/Bibhas-Roy-Chowdhury/publication/40
+204	2024	6	CARDPSoML: Comparative approach to analyze and predict cardiovascular	Wiley Online Library	onlinelibrary.wiley.com/doi/abs/10.1002/hsr2.1802
+205	2025	0	Heart disease classification using hybrid ML schemes and optimization	Taylor & Francis	tandfonline.com/doi/abs/10.1080/10255842.2025.2510373
+206		0	An Accurate Assessment of Cardiovascular Disorders Utilizing a H	scitepress.org	scitepress.org/Papers/2025/138960/138960.pdf
+207		0	Optimizing Logistic Regression in Cardiac Disease Risk Assesment	nijocet.fud.edu.ng	nijocet.fud.edu.ng/wp-content/uploads/2026/06/7-Optimizing-L
+208		0	CORONARY ARTERY DISEASE PREDICTION USING AN EXPLAINABLE DEEP CAR	ictactjournals.in	ictactjournals.in/paper/IJIVP_Vol_17_Iss_1_Paper_9_4042_4050
+209	2026	0	An Optimized Machine Learning Approach for Prediction of Cardiovascula	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11747195/
+210	2026	0	Revolutionizing HD Diagnosis: Hybrid Deep Learning and Machine L	Springer	link.springer.com/content/pdf/10.1007/s44196-026-01553-z_ref
+211	2026	1	Early cardiovascular disease detection using hierarchical quantum ense	Taylor & Francis	tandfonline.com/doi/abs/10.1080/10255842.2025.2612536
+212	2025	0	Enhancing Cardiovascular Disease Diagnosis Using Deep Learning: A CNN-	Springer	link.springer.com/chapter/10.1007/978-3-032-19196-0_26
+213	2022	74	Predictive classifier for cardiovascular disease based on stack	mdpi.com	mdpi.com/2227-9717/10/4/749
+214	2026	0	Enhancing Disease Diagnosis in Healthcare Using LSTM Networks with Opt	itegam-jetia.org	itegam-jetia.org/journal/index.php/jetia/article/view/3154
+215	2026	0	RNN-GRU hybrid deep learning framework for heart disease prediction	hrcak.srce.hr	hrcak.srce.hr/clanak/503913
+216	2025	0	Comparative study of machine learning techniques for early dete	scirp.org	scirp.org/journal/paperinformation
+217	2026	0	Comparative Machine Learning Models for Disease Risk Prediction		search.proquest.com/openview/2aabfc9d3b33eee40198381019b8ac2
+218	2026	0	An Advanced Ensemble Framework for Robust Heart Disease Detection and	etasr.com	etasr.com/index.php/ETASR/article/view/19612
+219	2023	200	Cardiovascular diseases prediction by machine learning incorporation w	frontiersin.org	frontiersin.org/journals/medicine/articles/10.3389/fmed.2023
+220	2025	2	Hybrid Deep Learning Model Using Residual Attention and BILSTM for Acc	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11368462/
+221		0	[C] (Arabic-script title, not legible in capture)
+222	2026	0	HSL-MIP: An Effective Hybrid Stacked Learning–Based Model for Myocardi	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11766480/
+223	2026	0	Machine learning-based prediction of dataset-defined myocardial infarc	journals.sagepub.com	journals.sagepub.com/doi/abs/10.1177/20552076261464747
+224	2026	0	Adaptive Attention and Hybrid Transformer Framework for Accurate Heart	search.proquest.com	search.proquest.com/openview/13cf5621d058fb45d53173c638bcf5d
+225	2023	6	Deep learning-based prediction for significant coronary artery stenosi	frontiersin.org	frontiersin.org/journals/cardiovascular-medicine/articles/10
+226	2025	0	Ensemble Machine Learning Algorithms Performance Comparison for Cardio	Springer	link.springer.com/chapter/10.1007/978-3-032-26370-4_25
+227	2025	10	A probabilistic feature-augmented gru-attention model for chronic dise	faith.futuretechsci.org	faith.futuretechsci.org/index.php/FAITH/article/view/100
+228	2026	0	A Comparative Study of Machine Learning Algorithms for Multi-Disease H	joieia.com	joieia.com/index.php/home/article/view/17
+229	2025	0	Comprehensive Comparative Analysis of Computational Intelligence Model	journals.ust.edu	journals.ust.edu/index.php/JST/article/view/2512
+230	2022	1	XAI Framework for Cardiovascular Disease Prediction Using Classi		academia.edu/download/95485434/electronics_11_04086.pdf
+231	2025	2	Evaluating ChatGPT for disease prediction: a comparative study	mdpi.com	mdpi.com/2673-7426/5/3/33
+232	2025	1	Enhanced AI-Driven Web-Based Analytics for Robust Early Heart Disease	Springer	link.springer.com/chapter/10.1007/978-981-96-8563-9_48
+233	2025	14	[C] … FAKTOR RISIKO PENYAKIT JANTUNG MENGGUNAKAN MACHINE LEARNING: CLA
+234	2026	0	Explainable Artificial Intelligence for Cardiovascular Risk Assessment	Springer	link.springer.com/chapter/10.1007/978-981-95-3811-9_12
+235	2026	0	CARDIAC DISEASE PREDICTION USING MACHINE LEARNING AND DEEP LEARNING: A	advancedengineeringscience.com	advancedengineeringscience.com/index.php/aes/article/view/30
+236	2025	7	Model uncertainty quantification: A post hoc calibration approach for	medrxiv.org	medrxiv.org/content/10.1101/2025.09.28.25336834.abstract
+237	2025	0	A new ensemble heart attack diagnosis (EHAD) model using artificial in	nature.com	nature.com/articles/s41598-025-18129-0
+238	2026	0	Web-Integrated Machine Learning System for Multi-Disease Risk As	researchgate.net	researchgate.net/profile/Aruna-Talari-2/publication/40439856
+239	2023	1	[C] Using Machine Learning Techniques to Predict Heart Disease
+240	2026	0	Cardiac Disease Prediction Using Artificial Intelligence and Deep Lear	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11717186/
+241	2026	0	Comparative Machine Learning and Explainable AI for Predicting Coronar	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/11467952/
+242	2022	2	Explainable AI for ICT: System and software architecture	Springer	link.springer.com/chapter/10.1007/978-981-19-2374-6_8
+243	2026	3	Benchmarking Ensemble Learning Approaches for Coronary Artery Disease	Springer	link.springer.com/article/10.1007/s44196-025-01147-1
+244	2024	62	Synergistic feature engineering and ensemble learning for early chroni	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/10511078/
+245	2024	0	Performance Evaluation of Cardiovascular Disease Prediction Using Supe	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/10808860/
+246	2023	40	Gradient boosting based model for elderly heart failure, aortic stenos	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/10124733/
+247	2026	0	Hybrid deep learning framework for cardiovascular risk prediction in p	nature.com	nature.com/articles/s41598-026-57064-6
+248	2024	28	Left main coronary artery disease: a contemporary review of diagnosis	pmc.ncbi.nlm.nih.gov	pmc.ncbi.nlm.nih.gov/articles/PMC11263144/
+249	2022	4	[C] A study on how data quality influences machine learning predictabi
+250	2026	25	A critical systematic review of ensemble learning methods for predicti	Springer	link.springer.com/article/10.1007/s10791-026-10005-3
+251	2022	11	A unified framework for managing sex and gender bias in AI models for	Elsevier	sciencedirect.com/science/chapter/edited-volume/pii/B9780128
+252	2025	6	Construction of predictive models for cardiovascular mortality by mach	jstage.jst.go.jp	jstage.jst.go.jp/article/circrep/7/4/7_CR-24-0182/_article/-
+253		0	Detecting and Mitigating Gender Bias in AI-Driven Cardiovascular	penni.wu.ac.at	penni.wu.ac.at/supervision/Patricia%20Haumer%20Master%20Thes
+254	2024	165	A review of machine learning's role in cardiovascular disease p	mdpi.com	mdpi.com/1999-4893/17/2/78
+255	2024	0	Convolutional Neural Networks Applied to the Diagnosis of Cardiovascul	ieeexplore.ieee.org	ieeexplore.ieee.org/abstract/document/10767608/
+256	2026	0	Prediction models of major adverse cardiovascular events in non-cardia		link.springer.com/content/pdf/10.1186/s12911-026-03781-x_ref
+257	2024	1	Cardiovascular Risk Prediction From Opportunistic Medical Imaging		rave.ohiolink.edu/etdc/view
+258		0	Metodi di machine learning per l'individuazione precoce della malattia	thesis.unipd.it	thesis.unipd.it/handle/20.500.12608/97805
+259	2025	0	Machine Learning Models for Detecting Chronic Disease Progression Base		search.proquest.com/openview/37e700d33c094d60d64ab924ddda6bb
+260	2026	0	A HYBRID FEATURE SELECTION WITH STACK-ENSEMBLE MODEL FOR CARDIAC		repository.uniben.edu/sites/default/files/2026-07/Nwamu%20Em
+261	2026	0	Deep learning approaches for ECG-based detection and diagnosis of coro		repository.essex.ac.uk/42819/
+262	2025	0	The 30th Annual Scientific Session of the American Society of Nuclear	journalofnuclearcardiology.org	journalofnuclearcardiology.org/pb-assets/Health%20Advance/jo
+263	2021	12	Global explanations with decision rules: a co-learning approach	proceedings.mlr.press	proceedings.mlr.press/v161/nanfack21a.html
+264	2026	0	[B] Machine Learning: Introducing Available Datasets with Python		books.google.com/books
+265	2015	105	Patients' experiences from symptom onset to initial treatment for atri	Wiley Online Library	onlinelibrary.wiley.com/doi/abs/10.1111/jocn.12708
+266		0	of Hypertension (SIIA)	Springer	link.springer.com/article/10.1007/s40292-020-00410-0
+267	2024	0	Building Interdisciplinary Research Careers in Women's Health (BIRCWH)	journals.sagepub.com	journals.sagepub.com/doi/full/10.1177/15409996251365000
+268	2026	0	Monitoring of Human Pose for Tracking Gym Activities	books.google.com	books.google.com/books

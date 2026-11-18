@@ -1,0 +1,43 @@
+{
+ "n": 303,
+ "models": {
+  "logistic_ordinal": {
+   "auc_documented": 0.9033602386383576,
+   "auc_corrected": 0.9033602386383576,
+   "max_abs_pred_diff": 2.220446049250313e-16
+  },
+  "logistic_onehot": {
+   "auc_documented": 0.9106422179329707,
+   "auc_corrected": 0.9106422179329707,
+   "max_abs_pred_diff": 4.163336342344337e-16
+  },
+  "random_forest": {
+   "auc_documented": 0.9050491314265662,
+   "auc_corrected": 0.9035137743463766,
+   "max_abs_pred_diff": 0.06800000000000006
+  },
+  "gradient_boosting": {
+   "auc_documented": 0.8836638006667836,
+   "auc_corrected": 0.88274258641867,
+   "max_abs_pred_diff": 0.15070756949168734
+  }
+ },
+ "documented_onehot_logistic_cp_coefs": {
+  "cp_typical_angina": -0.251,
+  "cp_atypical_angina": -0.037,
+  "cp_non-anginal_pain": -0.356,
+  "cp_asymptomatic": 0.482
+ },
+ "cad_rate_by_documented_label": {
+  "typical angina": 0.304,
+  "atypical angina": 0.18,
+  "non-anginal pain": 0.209,
+  "asymptomatic": 0.729
+ },
+ "cad_rate_by_true_label": {
+  "asymptomatic": 0.304,
+  "non-anginal pain": 0.18,
+  "atypical angina": 0.209,
+  "typical angina": 0.729
+ }
+}

@@ -1,0 +1,28 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Working notes (kept locally, not part of the repository)
+NOTES.md
+STATUS.md
+
+# LaTeX build outputs (rebuild with: ~/.local/bin/tectonic -X compile paper/main.tex)
+paper/*.pdf
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.out
+
+# Third-party material that is not redistributed (copyright or unclear licence)
+evidence/detrano1986/*.pdf
+evidence/detrano1986/*.png
+evidence/detrano1986/prior_art_dl/
+evidence/kaggle/*/
+
+# Blinded second-coder key: must not be visible to the second coder
+evidence/literature-audit/second-coder/KEY-do-not-open-until-done.tsv
+
+.DS_Store

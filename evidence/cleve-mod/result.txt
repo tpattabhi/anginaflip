@@ -1,0 +1,8 @@
+cleve.mod rows 303 joined 303
+cp_proc  1.0  2.0  3.0  4.0
+cp_mod                     
+abnang     0   50    0    0
+angina    23    0    0    0
+asympt     0    0    0  143
+notang     0    0   87    0
+CAD by cleve.mod label: {('abnang', 'buff'): 0.82, ('abnang', 'sick'): 0.18, ('angina', 'buff'): 0.7, ('angina', 'sick'): 0.3, ('asympt', 'buff'): 0.27, ('asympt', 'sick'): 0.73, ('notang', 'buff'): 0.79, ('notang', 'sick'): 0.21}
