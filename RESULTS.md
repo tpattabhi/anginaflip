@@ -2,7 +2,7 @@
 
 ## Bottom line
 **GO.** Every pillar is backed by data:
-1. The reversal is verified four independent ways.
+1. The reversal is established by two independent checks (the original 1986 study; the sites' raw angina features). The error is dated to 1990 or earlier, and Statlog (Heart) inherits it.
 2. It spread to every major distribution channel (≈675K Kaggle downloads across the two biggest copies, OpenML, PMLB).
 3. Published papers read it as medicine: across the full 150-paper sample (124 full texts read), 25 of 32 direction-stating papers are wrong (78%), and none identifies the reversal.
 4. **It changes LLM predictions.** With the documented labels, LLMs lose 0.12–0.33 AUC on the age/sex/chest-pain task (all 3 models, CIs exclude 0), and 0.016–0.077 on the full task in 2 of 3 models.
@@ -11,7 +11,7 @@
 
 **RunPod: not yet.** The pre-set "worthwhile" rule is strictly met by only 1 of 3 models on the full template. The next cheap step is to pull the per-patient CSVs from Kaggle to test H3 precisely, and optionally to add one larger free model on Kaggle.
 
-## 1. The error is real: four independent checks
+## 1. The error is real: two independent checks, a dating and an inherited copy
 | Check | Result | Evidence |
 |---|---|---|
 | Cleveland vs. the original 1986 paper (Detrano, *Circulation*) | Table 1 matches only with codes reversed (15/16 cells); Table 8 coefficients reproduced only reversed | `evidence/detrano1986/` |
@@ -58,7 +58,7 @@ Pre-specified protocol (`PROTOCOL-literature-audit.md`): a frame of 269 Google S
 
 ## 4. Consequences for models
 - **E9(a–b), done:** logistic models give identical predictions under both codings; trees differ by AUC ≤ 0.002. That is why benchmark use never caught it. The explanations flip: read with the documented labels, "asymptomatic" gets coefficient +0.48.
-- **E9(c), the LLM probe (pre-registered protocol; Kaggle T4, 3 open models, 303 patients × 6 prompts each):**
+- **E9(c), the LLM probe (protocol fixed before any run; Kaggle T4, 3 open models, 303 patients × 6 prompts each):**
 
 | Model | Template | AUC documented | AUC corrected | AUC no chest pain | ΔAUC (C − D) [95% CI] | Δ log loss (C − D) [95% CI] |
 |---|---|---|---|---|---|---|

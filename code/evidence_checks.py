@@ -101,6 +101,8 @@ DETRANO_TABLE1 = {
 }
 DETRANO_TABLE2_VESSELS = (55, 36, 35, 13)
 DETRANO_TABLE8_SUBSET1 = (-2.29, 0.07, -0.85, -1.10)  # constant, age, sex, pain
+# Subset 8 (n = 297): constant, age, sex, pain, ST depression, T11, T12, calcified arteries.
+DETRANO_TABLE8_SUBSET8 = (-2.33, 0.02, -0.45, -0.76, 0.65, 0.89, -0.08, 1.04)
 
 
 def _feasible_counts(pct: float, n: int, tol: float = 0.5) -> set[int]:
@@ -136,6 +138,12 @@ def check_detrano1986(zip_path: Path = UCI_ZIP) -> dict:
     y = (cl.num > 0).to_numpy(float)
     sex = np.where(cl.sex == 1, -1.0, 1.0)  # Detrano codes male = -1, female = +1
     age, cp = cl.age.to_numpy(float), cl.cp.to_numpy(float)
+    # Subset 8 adds ST depression, two thallium contrasts and the number of calcified arteries.
+    thal = cl.thal.to_numpy(float)
+    t11 = np.select([thal == 3, thal == 6, thal == 7], [-1.0, 0.0, 1.0], np.nan)
+    t12 = np.select([thal == 3, thal == 6, thal == 7], [-1.0, 1.0, 0.0], np.nan)
+    x8 = np.column_stack([age, sex, 5 - cp, cl.oldpeak, t11, t12, cl.ca])
+    complete = ~np.isnan(x8).any(axis=1)
     return {
         "n": len(cl),
         "table1_documented": detrano_table1_consistent(cl, (1, 2, 3, 4)),
@@ -143,6 +151,8 @@ def check_detrano1986(zip_path: Path = UCI_ZIP) -> dict:
         "table2_vessels": tuple(int((cl.num == k).sum()) for k in (1, 2, 3, 4)),
         "table8_cp_as_stored": tuple(np.round(logistic_fit(np.column_stack([age, sex, cp]), y), 2)),
         "table8_cp_reversed": tuple(np.round(logistic_fit(np.column_stack([age, sex, 5 - cp]), y), 2)),
+        "table8_subset8_n": int(complete.sum()),
+        "table8_subset8_cp_reversed": tuple(np.round(logistic_fit(x8[complete], y[complete]), 2)),
     }
 
 
@@ -274,6 +284,9 @@ KAGGLE_COLUMNS = {
     "max heart rate": "thalach",
     "thalch": "thalach",
     "cp": "copy_cp",
+    "Chest pain type": "copy_cp",
+    "BP": "trestbps",
+    "Max HR": "thalach",
 }
 
 
@@ -287,7 +300,7 @@ def check_kaggle(kaggle_dir: Path = KAGGLE, zip_path: Path = UCI_ZIP) -> dict[st
         copy.columns = [c.strip() for c in copy.columns]
         copy = copy.rename(columns=KAGGLE_COLUMNS)
         if "copy_cp" not in copy or not set(key) <= set(copy.columns):
-            continue
+            raise ValueError(f"{path}: unrecognized columns {list(copy.columns)}; extend KAGGLE_COLUMNS")
         for col in key:
             copy[col] = pd.to_numeric(copy[col], errors="coerce")
         out[path.parent.name] = _match_on(copy, uci, key, "copy_cp")

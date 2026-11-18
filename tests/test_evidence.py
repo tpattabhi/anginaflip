@@ -29,6 +29,16 @@ def test_detrano_table8_reproduced_only_reversed(detrano):
     assert detrano["table8_cp_as_stored"] == pytest.approx((-7.77, 0.07, -0.85, 1.10), abs=0.005)
 
 
+def test_detrano_table8_subset8_slopes(detrano):
+    """Seven slopes: six match to two decimals, T12 within 0.01; the constant differs (as the paper says)."""
+    assert detrano["table8_subset8_n"] == 297
+    fitted, published = detrano["table8_subset8_cp_reversed"], ec.DETRANO_TABLE8_SUBSET8
+    diffs = [abs(f - p) for f, p in zip(fitted[1:], published[1:])]
+    assert sum(d < 0.005 for d in diffs) == 6
+    assert max(diffs) <= 0.01 + 1e-9
+    assert abs(fitted[0] - published[0]) > 0.5
+
+
 @pytest.mark.parametrize(
     "site, code4_all_three, code4_total, code1_none, code1_total",
     [("budapest", 118, 123, 10, 11), ("switzerland", 91, 98, 4, 4), ("long_beach", 126, 131, 8, 8)],
@@ -108,8 +118,17 @@ def test_kaggle_copies():
     tabs = ec.check_kaggle()
     if not tabs:
         pytest.skip("Kaggle copies are not redistributed; download them to evidence/kaggle/<owner>_<slug>/")
+    assert len(tabs) == len(list(ec.KAGGLE.glob("*/*.csv")))  # no copy silently skipped
     for name, mapping in KAGGLE_EXPECTED.items():
         assert _is_mapping(tabs[name], mapping), name
+    # Copies that keep the UCI codes unchanged.
+    for name in (
+        "imnikhilanand_heart-attack-prediction",
+        "mexwell_heart-disease-dataset",
+        "rishidamarla_heart-disease-prediction",
+    ):
+        assert _is_mapping(tabs[name], {1: 1, 2: 2, 3: 3, 4: 4}), name
+    assert _is_mapping(tabs["cherngs_heart-disease-cleveland-uci"], {0: 1, 1: 2, 2: 3, 3: 4})
 
 
 def test_logistic_fit_recovers_known_coefficients():

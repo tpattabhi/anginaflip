@@ -23,43 +23,40 @@ University of the Cumberlands, Williamsburg, KY, USA\\
 \maketitle
 
 \begin{abstract}
-The UCI Heart Disease data are among the most widely used benchmark datasets in machine learning. We show that their chest-pain variable is stored in the reverse order of its documentation. In all four source files, the code documented as ``typical angina'' (1) identifies patients without chest pain, and the code documented as ``asymptomatic'' (4) identifies patients with typical angina.
+The UCI Heart Disease data are among the most widely used benchmark datasets in machine learning. We show that their chest-pain variable is stored in reverse of its documentation. At all four sites, the code documented as ``typical angina'' (1) marks patients without chest pain, and the code documented as ``asymptomatic'' (4) marks patients with typical angina.
 
-Four independent checks agree:
-(i) the summary tables and published regression coefficients of the original 1986 study of the same 303 Cleveland patients are reproduced only under the reversed reading;
-(ii) in the Budapest, Swiss and Long Beach files, patients coded 4 have all three classical angina features in 93--96\% of cases;
-(iii) the reversal is already present in a 1990 word-labelled version of the Cleveland file;
-(iv) the Statlog (Heart) dataset is a 270-patient Cleveland subset with identical codes.
+Two independent checks establish this:
+(i) the chest-pain table and regression coefficients of the original 1986 Cleveland study are reproduced only under the reversed reading;
+(ii) in the Budapest, Swiss and Long Beach files, 93--96\% of patients coded 4 have all three classical angina features.
+A 1990 word-labelled Cleveland file already uses the reversed reading, and Statlog (Heart), a Cleveland subset, inherits it. So do OpenML, PMLB and the most-downloaded Kaggle copies (about 675{,}000 downloads for the two largest).
 
-The documented labels have spread to OpenML, PMLB and the most-downloaded Kaggle copies (about 675{,}000 downloads for the two largest).
+In a pre-specified audit of a random sample of 150 papers (124 readable), 32 state a direction for a named chest-pain category. In 25 of them (78\%; 95\% CI 61--89\%) the direction is clinically backwards, nine explain it clinically, and none identifies the reversal.
 
-In a pre-specified audit of 150 papers, 124 full texts were readable. Of these, 32 papers state a direction for a named chest-pain category, and 25 of the 32 (78\%; 95\% CI 61--89\%) state a direction that is clinically backwards. Nine of the 25 explain the backwards result in clinical terms. No paper in the sample identifies the reversal.
+Conventional models are essentially unaffected, which is why the error went unnoticed. Their explanations are reversed, and language-model classifiers that read the labels as text are misled. With the documented labels, three open-weight models lose 0.12--0.33 AUC given age, sex and chest-pain type, and two of them lose 0.016--0.077 AUC given all 13 predictors.
 
-Conventional models are unaffected: their predictions are invariant to relabelling. This explains why the error went unnoticed. Explanations are affected, and so are language-model classifiers that read the labels as text. With the documented labels, three open-weight models lose 0.12--0.33 AUC when given age, sex and chest-pain type, and 0.016--0.077 AUC in two of the three with all 13 predictors.
-
-We give the corrected mapping, the evidence and the code, and recommend that the dataset documentation and its copies be corrected.
+We give the corrected mapping, the evidence and the code, and recommend correcting the documentation and its copies.
 \end{abstract}
 
 \section{Introduction}
 
-The UCI Heart Disease data \cite{uciheart} were collected at four centres in the 1980s for a study of probability-based diagnosis of coronary artery disease (CAD) \cite{detrano1989}. They have since become a standard teaching and benchmarking dataset. Their documentation codes chest-pain type (\texttt{cp}) as 1 = typical angina, 2 = atypical angina, 3 = non-anginal pain and 4 = asymptomatic.
+The Heart Disease data of the UCI (University of California, Irvine) Machine Learning Repository \cite{uciheart} were collected at four centers in the 1980s for a study of probability-based diagnosis of coronary artery disease (CAD) \cite{detrano1989}. They have since become a standard teaching and benchmarking dataset. Their documentation codes chest-pain type (\texttt{cp}) as 1 = typical angina, 2 = atypical angina, 3 = non-anginal pain and 4 = asymptomatic.
 
 Under this reading, the data say that patients without chest pain are the most likely to have CAD: 72.9\% of Cleveland patients coded ``asymptomatic'' have CAD, against 30.4\% of those coded ``typical angina''. % results/invariance.json
 This contradicts a basic and well-established gradient in cardiology. Typical angina is the presentation most predictive of CAD, and its absence is the least predictive \cite{diamond1979}.
 
-We show that the gradient is not a property of the patients but of the documentation: the codes are stored in reverse. Section~\ref{sec:evidence} gives four independent checks. Section~\ref{sec:spread} traces the documented labels into widely used copies. Section~\ref{sec:audit} measures how published work interprets the variable. Section~\ref{sec:consequences} examines what the error does and does not change.
+We show that the gradient is not a property of the patients but of the documentation: the codes are stored in reverse. Section~\ref{sec:evidence} establishes the reversal with two independent checks, dates it and shows that Statlog (Heart) inherits it. Section~\ref{sec:spread} traces the documented labels into widely used copies. Section~\ref{sec:audit} measures how published work interprets the variable. Section~\ref{sec:consequences} examines what the error does and does not change.
 
 The error matters for two reasons.
 \begin{itemize}
-\item Because it does not affect predictive accuracy, it survived decades of benchmarking. A purely relabelled categorical variable leaves most models' predictions unchanged.
-\item It does change interpretation, which is now a routine part of applied machine learning. SHAP values \cite{lundberg2017}, coefficients and association rules computed on these data attach clinical meaning to the documented labels. We find that published papers frequently report the backwards gradient as a clinical finding and sometimes explain it.
+\item Because it does not affect predictive accuracy, it survived decades of benchmarking. A purely relabeled categorical variable leaves most models' predictions unchanged.
+\item It does change interpretation, which is now a routine part of applied machine learning. SHAP (SHapley Additive exPlanations) values \cite{lundberg2017}, coefficients and association rules computed on these data attach clinical meaning to the documented labels. We find that published papers frequently report the backwards gradient as a clinical finding and sometimes explain it.
 \end{itemize}
 
 \textbf{Contributions.}
 \begin{enumerate}
-\item Evidence from four independent sources that \texttt{cp} is stored in reverse at all four sites.
+\item Evidence from two independent sources that \texttt{cp} is stored in reverse at all four sites, a dating of the error to 1990 or earlier, and evidence that Statlog (Heart) inherits it.
 \item A trace of the documented labels through OpenML, PMLB and Kaggle.
-\item A pre-specified audit of 150 published papers.
+\item A pre-specified audit of a random sample of 150 papers.
 \item An evaluation of the consequences for classical models, their explanations, and language-model classifiers.
 \item The corrected mapping and code to apply it.
 \end{enumerate}
@@ -67,26 +64,26 @@ The error matters for two reasons.
 \section{Evidence that the coding is reversed}\label{sec:evidence}
 
 \paragraph{Cleveland against the original study.}
-Detrano et al.~\cite{detrano1986} report a study of 303 Cleveland Clinic patients, the same number as the UCI Cleveland file.
+Detrano et al.~\cite{detrano1986} report a study of 303 patients referred for coronary angiography at the Cleveland Clinic Foundation, the same number as the UCI Cleveland file.
 \begin{itemize}
 \item \textbf{Vessel counts:} the UCI outcome (number of diseased vessels, 1--4) reproduces their Table~2 exactly (55, 36, 35, 13 patients).
 \item \textbf{Chest pain by sex and disease status} (their Table~1): we matched the published row percentages to the UCI file in each of 16 cells (4 pain categories $\times$ sex $\times$ disease status). With the documented coding, 0 of 16 cells are consistent. With the reversed coding, 15 of 16 are.
-\item \textbf{Regression coefficients} (their Table~8): they report a logistic model of CAD on age, sex and chest pain, coded with typical angina highest: constant $-2.29$, age $0.07$, sex $-0.85$, pain $-1.10$. Refitting on the UCI file reproduces these values to two decimals only if pain is entered as $5-\texttt{cp}$. With \texttt{cp} as stored, the constant becomes $-7.77$ and the pain coefficient changes sign to $+1.10$. In their larger seven-predictor model (297 patients), the reversed reading reproduces six slopes to two decimals and the seventh within 0.01. The constant differs.
+\item \textbf{Regression coefficients} (their Table~8): they report a logistic model of CAD on age, sex and chest pain (coded 1--4): constant $-2.29$, age $0.07$, sex $-0.85$, pain $-1.10$. Refitting on the UCI file reproduces these values to two decimals only if pain is entered as $5-\texttt{cp}$, that is, if stored code 4 is the first category of their Table~1 (angina pectoris). With \texttt{cp} as stored, the constant becomes $-7.77$ and the pain coefficient changes sign to $+1.10$. In their larger seven-predictor model (297 patients), the reversed reading reproduces six slopes to two decimals and the seventh within 0.01. The constant differs.
 \end{itemize}
-% evidence/detrano1986/verify_detrano1986.py
+% code/evidence_checks.py: check_detrano1986; tests/test_evidence.py
 
 \paragraph{Budapest, Switzerland and Long Beach against their own raw records.}
-The 76-attribute raw files for these three sites record the three features that define typical angina \cite{diamond1979}: substernal location, provocation by exertion, and relief by rest. Table~\ref{tab:raw} cross-tabulates them against \texttt{cp}.
+The 76-attribute raw files for these three sites record the three features that define typical angina \cite{diamond1979}: substernal location, provocation by exertion, and relief by rest. The UCI documentation lists them as attributes 5--7, and their sum as attribute 8. Table~\ref{tab:raw} cross-tabulates them against \texttt{cp}.
 \begin{itemize}
 \item Patients coded 4 almost always have all three features.
 \item Patients coded 1 almost never have any.
-\item The number of features falls monotonically from code 4 to code 1.
+\item At each site, the mean number of features falls monotonically from code 4 to code 1.
 \end{itemize}
 This is the definition of the four categories, in reverse. The Cleveland raw file does not contain these fields.
 
 \begin{table}[t]
 \centering
-\caption{Classical angina features (substernal, exertional, relieved by rest) by stored chest-pain code, in the raw records of three UCI sites. Each cell gives the number of patients with 0, 1, 2 or 3 of the features.}\label{tab:raw}
+\caption{Classical angina features (substernal, exertional, relieved by rest) by stored chest-pain code, in the raw records of three UCI sites. Each cell gives the number of patients with 0, 1, 2 or 3 of the features, among patients with all three recorded. Full tables for all four codes are in the repository.}\label{tab:raw}
 \begin{tabular}{lcccc}
 \toprule
 Site / stored code & 0 features & 1 & 2 & 3 features\\
@@ -99,29 +96,25 @@ Long Beach, code 1 & 8 & 0 & 0 & 0\\
 Long Beach, code 4 & 0 & 0 & 5 & 126\\
 \bottomrule
 \end{tabular}
-% evidence/raw-pain-features/result.txt
+% code/evidence_checks.py: check_raw_features
 \end{table}
 
-\paragraph{The reversal dates to 1990.}
-The UCI archive includes \texttt{cleve.mod}, a word-labelled version of the Cleveland data prepared by John Gennari in March 1990. Joined row by row to the processed file, all 303 rows map code 1 to \texttt{angina}, 2 to \texttt{abnang}, 3 to \texttt{notang} and 4 to \texttt{asympt}. The documented reading was therefore already fixed in 1990. % evidence/cleve-mod/result.txt
-Its consequence is visible in the same file: 73\% of patients labelled \texttt{asympt} are \texttt{sick}.
+\paragraph{The reversed reading was in use by 1990.}
+The UCI archive includes \texttt{cleve.mod}, a word-labeled version of the Cleveland data prepared by John Gennari in March 1990. Joined row by row to the processed file, all 303 rows map code 1 to \texttt{angina}, 2 to \texttt{abnang}, 3 to \texttt{notang} and 4 to \texttt{asympt}. The documented, reversed reading was therefore already in use in 1990. % code/evidence_checks.py: check_cleve_mod
+Its consequence is visible in the same file: 73\% of patients labeled \texttt{asympt} are \texttt{sick}.
 
 \paragraph{Statlog (Heart).}
-The Statlog (Heart) dataset \cite{ucistatlog} (270 patients) matches 270 Cleveland rows uniquely, with identical chest-pain codes and outcomes in every row. It inherits the error. % evidence/statlog-check/result.txt
+The Statlog (Heart) dataset \cite{ucistatlog} (270 patients) matches 270 Cleveland rows uniquely, with identical chest-pain codes and outcomes in every row. It inherits the error. % code/evidence_checks.py: check_statlog
 
 \paragraph{Correction.}
 For all four UCI files and Statlog, the clinically correct label of stored code $k$ is the documented label of $5-k$: 4 = typical angina, 3 = atypical angina, 2 = non-anginal pain, 1 = asymptomatic.
 
-The middle two codes swap as well. The raw features support this at Budapest and Long Beach, where code 3 patients mostly have two features and code 2 patients mostly one. % result.txt
+The middle two codes swap as well. The raw features support this at Budapest and Long Beach, where code 3 patients mostly have two features and code 2 patients mostly one. % tests/test_evidence.py: test_raw_features_middle_codes_swap_too
 Under the corrected labels, Cleveland CAD prevalence is 72.9\% for typical angina and 30.4\% for asymptomatic patients.
 
 \section{Where the documented labels spread}\label{sec:spread}
 
-We downloaded the most widely used copies and matched their rows to the UCI files (17~Nov 2026). Table~\ref{tab:spread} summarises the result. Every copy we examined either keeps the UCI codes with the UCI documentation, or writes the documented labels out as words. Two recodings add further errors:
-\begin{itemize}
-\item The most-downloaded Kaggle copy \cite{kagglelapp} swaps the end codes (0 = UCI 4, 3 = UCI 1), keeps the middle codes in order, and also reverses the outcome.
-\item PMLB \cite{pmlb} stores UCI$-1$ and documents 0 as typical angina.
-\end{itemize}
+We downloaded the most widely used copies and matched their rows to the UCI files (17~Nov 2026). Table~\ref{tab:spread} summarizes the result. Every copy that names the categories uses the documented, reversed labels: it keeps the UCI codes and documentation, writes the labels out as words, or recodes the values and documents the recoded labels in the same order. PMLB \cite{pmlb}, for example, stores UCI$-1$ and documents 0 as typical angina. One recoding adds further problems: the most-downloaded Kaggle copy \cite{kagglelapp} swaps the end codes (0 = UCI 4, 3 = UCI 1), keeps the middle codes in order, does not state the labels, and reverses the outcome.
 
 \begin{table}[t]
 \centering
@@ -133,7 +126,7 @@ Copy & Chest-pain coding & Reach\\
 \midrule
 UCI repository page \cite{uciheart} & documents 1 = typical angina; wrong & 1.26M views\\
 Kaggle, fedesoriano \cite{kagglefedesoriano} (918 rows, 4 sites + Statlog) & words; ``TA'' = UCI 1; wrong & 290K downloads\\
-Kaggle, D.~Lapp \cite{kagglelapp} (1{,}025 rows) & 0 = UCI 4, 3 = UCI 1; outcome also reversed & 385K downloads\\
+Kaggle, D.~Lapp \cite{kagglelapp} (1{,}025 rows) & 0 = UCI 4, 3 = UCI 1; labels not stated; outcome reversed & 385K downloads\\
 Kaggle, redwankarimsony (920 rows) & words; ``typical angina'' = UCI 1; wrong & 112K downloads\\
 OpenML \texttt{heart-c}, \texttt{heart-h} \cite{openml} & words; \texttt{typ\_angina} = UCI 1; wrong & ---\\
 PMLB \texttt{heart\_disease\_*} \cite{pmlb} & UCI$-1$, documented 0 = typical angina; wrong & ---\\
@@ -151,18 +144,18 @@ The protocol was fixed before any full text was read; later changes are logged w
 \item \textbf{Sample:} the first 150 records of a seeded random order (seed 20261117).
 \item \textbf{Inclusion:} a paper is included if its full text states a direction for a named chest-pain category, from its own data or model. Importance without a sign, numeric-only statements and background text were not counted.
 \item \textbf{Coding:} for each included paper we recorded the copy used, the verbatim claim, whether the stated direction is clinically correct, and whether the paper explains the direction clinically.
-\item \textbf{Access:} inaccessible papers were counted, not replaced. Full texts came from open access, the author's university library and open repository copies. No bot challenge was bypassed.
+\item \textbf{Access:} inaccessible papers were counted, not replaced. Full texts came from open access, the author's university library and open repository copies. No access control was circumvented: where a publisher showed a browser check, the author cleared it by hand or the paper was counted as inaccessible.
 \end{itemize}
 
 \paragraph{Results.}
 124 of the 150 full texts were readable.
 \begin{itemize}
-\item \textbf{Direction-stating papers:} 32 state a direction for a named category. In 25 of the 32 (78\%; 95\% Wilson interval \cite{wilson1927} 61--89\%) the stated direction is clinically backwards: they report the category labelled asymptomatic as highest risk, or typical angina as lowest.
+\item \textbf{Direction-stating papers:} 32 state a direction for a named category. In 25 of the 32 (78\%; 95\% Wilson interval \cite{wilson1927} 61--89\%) the stated direction is clinically backwards. Most report the category labeled asymptomatic as highest risk, or typical angina as lowest.
 \item \textbf{Sensitivity analysis:} excluding hedged, illustrative, single-patient, mixed and inconsistently mapped statements gives 20 of 27 (74\%; 55--87\%).
-\item \textbf{Rationalised errors:} nine of the 25 explain the backwards direction clinically. Examples:
+\item \textbf{Typical wording:} ``[P]atients with asymptomatic chest pain (ASY) are about six times more likely to suffer heart disease than those with Atypical Angina'' \cite{baghdadi2023}.
+\item \textbf{Rationalized errors:} nine of the 25 also explain the backwards direction clinically, for example:
   \begin{itemize}
-  \item ``asymptomatic chest pain is actually the most severe out of the four types'' \cite{dave2020};
-  \item ``[P]atients with asymptomatic chest pain (ASY) are about six times more likely to suffer heart disease'' \cite{baghdadi2023};
+  \item ``This may seem counterintuitive, but asymptomatic chest pain is actually the most severe out of the four types'' \cite{dave2020};
   \item ``\ldots aligning with clinical findings that many severe cardiovascular conditions present with minimal symptoms'' \cite{harrou2025}.
   \end{itemize}
 \item \textbf{The seven correct-sounding statements:} none reflects the true coding.
@@ -172,7 +165,7 @@ The protocol was fixed before any full text was read; later changes are logged w
   \item One maps codes inconsistently.
   \item One does not identify its copy.
   \end{itemize}
-\item \textbf{Every copy is affected:} the backwards statements come from UCI-coded or UCI-labelled files (15), the fedesoriano copy (6) and the Kaggle 303- and 1{,}025-row copies (4).
+\item \textbf{Every copy is affected:} the backwards statements come from UCI-coded or UCI-labeled files (15), the fedesoriano copy (6) and the Kaggle 303- and 1{,}025-row copies (4).
 \end{itemize}
 No paper in the sample identifies the reversal. This includes a 2026 leakage audit devoted to these data, which describes asymptomatic chest pain as a ``clinically plausible'' leading feature \cite{hussain2026}.
 % evidence/literature-audit/audit-150-summary.md, round3-access-notes.md
@@ -180,23 +173,23 @@ No paper in the sample identifies the reversal. This includes a 2026 leakage aud
 \section{Consequences}\label{sec:consequences}
 
 \paragraph{Predictions of conventional models are unchanged.}
-On Cleveland (303 patients, five-fold cross-validation), we fitted the same models with \texttt{cp} as stored and with \texttt{cp} relabelled:
+On Cleveland (303 patients, five-fold cross-validation), we fitted the same models with \texttt{cp} as stored and with \texttt{cp} relabeled:
 \begin{itemize}
-\item \textbf{Logistic regression,} with \texttt{cp} ordinal or one-hot: identical predictions (AUC 0.903 and 0.911 under both codings).
-\item \textbf{Random forests and gradient boosting:} AUC differs by at most 0.002, from tie-breaking only.
+\item \textbf{Logistic regression,} with \texttt{cp} ordinal or one-hot: identical predictions (area under the ROC curve, AUC, 0.903 and 0.911 under both codings).
+\item \textbf{Random forests and gradient boosting:} AUC differs by at most 0.002, consistent with tie-breaking between equivalent splits.
 \end{itemize}
 This is why benchmarking never revealed the error. % results/invariance.json
 
 \paragraph{Explanations are reversed.}
-The same one-hot logistic model assigns its largest positive coefficient ($+0.48$) to the category labelled asymptomatic, and negative coefficients to the category labelled typical angina. Any explanation method reads this as ``no chest pain raises risk''. The audit in Section~\ref{sec:audit} shows that published work does so.
+The same one-hot logistic model, fitted to all 303 patients with standardized features, assigns its largest positive coefficient ($+0.48$) to the category labeled asymptomatic, and negative coefficients to the category labeled typical angina. Any explanation method reads this as ``no chest pain raises risk''. The audit in Section~\ref{sec:audit} shows that published work does so.
 
 \paragraph{Language-model classifiers are affected.}
-LLM-based tabular methods serialise each record as text and rely on the model's prior knowledge \cite{hegselmann2022}. For these methods the label is an input, not just an annotation.
+Tabular methods based on large language models (LLMs) serialize each record as text and rely on the model's prior knowledge \cite{hegselmann2022}. For these methods the label is an input, not just an annotation.
 
-We ran a pre-registered probe on Cleveland:
+We ran a probe on Cleveland whose protocol was fixed before any model was run:
 \begin{itemize}
 \item \textbf{Models:} three open-weight instruction models (Qwen2.5-7B \cite{qwen25}, Llama-3.1-8B \cite{llama3} and Phi-3.5-mini \cite{phi3}, 4-bit), zero-shot.
-\item \textbf{Score:} the first-token probability of ``Yes'' to a CAD question.
+\item \textbf{Score:} the probability of ``Yes'' relative to ``No'' for the first answer token of a yes/no question about CAD.
 \item \textbf{Templates:} each patient was described with all 13 predictors (\emph{full}) or with age, sex and chest pain only (\emph{minimal}).
 \item \textbf{Conditions:} documented labels (D), corrected labels (C), or no chest-pain line.
 \end{itemize}
@@ -204,11 +197,11 @@ We ran a pre-registered probe on Cleveland:
 Table~\ref{tab:llm} gives the results.
 \begin{itemize}
 \item Corrected labels improved log loss in all six model--template pairs.
-\item With the minimal template they improved AUC by 0.12--0.33 in all three models. With the documented labels, Qwen scored below chance (AUC 0.458), and Qwen and Llama both scored worse than with chest pain omitted.
+\item With the minimal template, corrected labels improved AUC by 0.12--0.33 in all three models. With the documented labels, Qwen scored below chance (AUC 0.458), and Qwen and Llama both scored worse than with chest pain omitted.
 \item With the full template, AUC improved in two of three models (Qwen $+0.016$, Llama $+0.077$; intervals exclude 0). Phi was unchanged.
 \item For Llama with the minimal template, mean predicted risk rose from code 1 to code 4 under the corrected labels (0.02 to 0.29) and fell under the documented labels (0.29 to 0.02).
 \end{itemize}
-We set a threshold in advance for scaling the probe up to larger models: an AUC gain of at least 0.02 on the full template in two models. Only one model met it, so we report the full-template effect as modest.
+Llama discriminated poorly on the full template under both labelings (AUC 0.51--0.59), so its full-template gain should be read with caution. We set a threshold in advance for scaling the probe up to larger models: an AUC gain of at least 0.02 on the full template in two models, or a reversed risk gradient in two models. Only one model met it, so we report the full-template effect as modest.
 
 \begin{table}[t]
 \centering
@@ -235,7 +228,7 @@ Phi-3.5-mini & minimal & 0.673 & 0.795 & 0.638 & $+0.122$ [0.056, 0.191] & $-0.9
 \begin{itemize}
 \item \textbf{Label and documentation errors in benchmark data:} label errors in widely used test sets alter model rankings \cite{northcutt2021}. Documentation problems in the UCI Adult data motivated replacement datasets \cite{ding2021}. Datasheets \cite{gebru2021} and studies of data cascades \cite{sambasivan2021} argue that such errors propagate silently.
 \item \textbf{Provenance errors in these data:} Ogu et al.~\cite{ogu2026} report that a widely shared Kaggle copy of the Cleveland data reverses the outcome and recodes chest pain. They treat the UCI documentation as correct.
-\item \textbf{Backwards rules learned from data:} the best-known clinical example of an explainable model learning a medically backwards rule from real data is the asthma--pneumonia case of Caruana et al.~\cite{caruana2015}. There the rule reflected a real feature of care. Here the rule reflects a documentation error.
+\item \textbf{Backwards rules learned from data:} a well-known clinical example of an explainable model learning a medically backwards rule from real data is the asthma--pneumonia case of Caruana et al.~\cite{caruana2015}. There the rule reflected a real feature of care. Here the rule reflects a documentation error.
 \end{itemize}
 To our knowledge, no prior work reports that the UCI files store chest-pain type in reverse of their documentation. We searched the web, Google Scholar, Semantic Scholar, IEEE Xplore, Kaggle discussions, GitHub issues and the UCI page between 16 and 18 Nov 2026.
 
@@ -244,29 +237,29 @@ To our knowledge, no prior work reports that the UCI files store chest-pain type
 \paragraph{Recommendations.}
 \begin{itemize}
 \item \textbf{Maintainers} of the UCI page, OpenML, PMLB and the Kaggle copies should correct the chest-pain labels and add a note to existing versions.
-\item \textbf{Users} should map stored code $k$ to the documented label of $5-k$ for the UCI files and Statlog. For copies coded 0--3, they should check against Table~\ref{tab:spread} which transformation applies.
+\item \textbf{Users} should map stored code $k$ to the documented label of $5-k$ for the UCI files and Statlog. For copies coded 0--3, they should check which transformation applies (Table~\ref{tab:spread}).
 \item \textbf{Papers that interpret chest-pain effects} from these data should re-examine those interpretations. Their predictive results stand.
 \end{itemize}
 More generally, a benchmark variable whose effect contradicts settled domain knowledge is a reason to check the data before explaining the finding.
 
 \paragraph{Limitations.}
 \begin{itemize}
-\item \textbf{Cleveland evidence:} the Cleveland raw file lacks the pain features, so the Cleveland evidence rests on the original study, the 1990 file and Statlog.
+\item \textbf{Cleveland evidence:} the Cleveland raw file lacks the pain features, so the evidence for Cleveland rests on the original study alone. The 1990 file dates the reading, and Statlog only shows inheritance.
 \item \textbf{Literature frame:} the frame is one Scholar query that requires the words asymptomatic and SHAP. Our rates describe direction-stating papers in this frame, not the whole literature.
-\item \textbf{Single coder:} the audit was coded by one author; an independent second coding is in progress.
+\item \textbf{Single coder:} the audit was coded by one author. An independent, blinded second coding of all 32 direction-stating papers and 20 others is planned; the materials are in the repository.
 \item \textbf{Unread papers:} 17\% of sampled papers could not be read.
 \item \textbf{Text-only extraction:} claims shown only in figures were not captured, so the counts of backwards statements are lower bounds.
-\item \textbf{LLM probe:} small quantised models, one prompt format, and one site.
+\item \textbf{LLM probe:} small quantized models, one prompt format, zero-shot only, and one site.
 \end{itemize}
 
 \section{Conclusion}
 
-The UCI Heart Disease chest-pain variable has been documented in reverse since at least 1990. The error leaves predictive benchmarks untouched, which is why it persisted. It reverses explanations, it misleads language-model classifiers, and it has entered the published literature as a clinical finding. Correcting it requires one sentence of documentation per copy.
+The UCI Heart Disease chest-pain variable has been documented in reverse since at least 1990. The error leaves predictive benchmarks untouched, which is why it persisted. It reverses explanations, it misleads language-model classifiers, and it has entered the published literature as a clinical finding. Correcting the documentation is simple, and the evidence and code to do so are public.
 
 \section*{Data and code availability}
 All evidence files, scripts, the literature-audit coding and the LLM-probe notebook are available at \url{https://github.com/tpattabhi/anginaflip}. % TODO(user): make the repository public before posting.
 
-\section*{Acknowledgements and disclosures}
+\section*{Acknowledgments and disclosures}
 This work received no funding. The author reports no competing interests. The work was done independently and is not affiliated with any employer.
 % TODO(user): AI-use disclosure, final wording to be approved by the author. Suggested:
 % "The author used Claude (Anthropic) to assist with code, literature retrieval and drafting. The author reviewed, verified and takes responsibility for all content."
