@@ -28,7 +28,7 @@ The UCI Heart Disease data are among the most widely used benchmark datasets in 
 Two independent checks establish this:
 (i) the chest-pain table and regression coefficients of the original 1986 Cleveland study are reproduced only under the reversed reading;
 (ii) in the Budapest, Swiss and Long Beach files, 93--96\% of patients coded 4 have all three classical angina features.
-A 1990 word-labelled Cleveland file already uses the reversed reading, and Statlog (Heart), a Cleveland subset, inherits it. So do OpenML, PMLB and the most-downloaded Kaggle copies (about 675{,}000 downloads for the two largest).
+A 1990 word-labelled Cleveland file already uses the reversed reading, and Statlog (Heart), a Cleveland subset, inherits it. So do OpenML, PMLB and the most-downloaded Kaggle copies (about 676{,}000 downloads for the two largest).
 
 In a pre-specified audit of a random sample of 150 papers (124 readable), 32 state a direction for a named chest-pain category. In 25 of them (78\%; 95\% CI 61--89\%) the direction is clinically backwards, nine explain it clinically, and none identifies the reversal.
 
@@ -119,20 +119,20 @@ We downloaded the most widely used copies and matched their rows to the UCI file
 \begin{table}[t]
 \centering
 \small
-\caption{Coding of chest-pain type in widely used copies (checked 17 Nov 2026). ``Wrong'' means the copy's own labels give the documented, reversed reading.}\label{tab:spread}
+\caption{Coding of chest-pain type in widely used copies (coding checked 17--18 Nov 2026; usage counts read from the pages on 18 Nov 2026). ``Wrong'' means the copy's own labels give the documented, reversed reading.}\label{tab:spread}
 \begin{tabularx}{\linewidth}{lXl}
 \toprule
 Copy & Chest-pain coding & Reach\\
 \midrule
 UCI repository page \cite{uciheart} & documents 1 = typical angina; wrong & 1.26M views\\
 Kaggle, fedesoriano \cite{kagglefedesoriano} (918 rows, 4 sites + Statlog) & words; ``TA'' = UCI 1; wrong & 290K downloads\\
-Kaggle, D.~Lapp \cite{kagglelapp} (1{,}025 rows) & 0 = UCI 4, 3 = UCI 1; labels not stated; outcome reversed & 385K downloads\\
+Kaggle, D.~Lapp \cite{kagglelapp} (1{,}025 rows) & 0 = UCI 4, 3 = UCI 1; labels not stated; outcome reversed & 386K downloads\\
 Kaggle, redwankarimsony (920 rows) & words; ``typical angina'' = UCI 1; wrong & 112K downloads\\
 OpenML \texttt{heart-c}, \texttt{heart-h} \cite{openml} & words; \texttt{typ\_angina} = UCI 1; wrong & ---\\
 PMLB \texttt{heart\_disease\_*} \cite{pmlb} & UCI$-1$, documented 0 = typical angina; wrong & ---\\
 \bottomrule
 \end{tabularx}
-% evidence/kaggle/README.md, evidence/openml/result.txt, evidence/pmlb/README.md
+% code/evidence_checks.py (coding); evidence/usage-counts-2026-11-18.md (counts)
 \end{table}
 
 \section{How published work reads the variable}\label{sec:audit}
