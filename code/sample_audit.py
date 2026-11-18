@@ -47,8 +47,9 @@ EXCLUDED_DUPLICATE = {10: 0, 40: 11, 43: 31, 186: 171, 175: 170, 195: 177, 230: 
 SEED = 20261117
 
 
-def main():
-    rows = list(csv.DictReader(open(FRAME), delimiter="\t", quoting=csv.QUOTE_NONE))
+def compute() -> dict:
+    with open(FRAME, newline="") as f:
+        rows = list(csv.DictReader(f, delimiter="\t", quoting=csv.QUOTE_NONE))
     excluded = set(EXCLUDED_OFF_TOPIC) | set(EXCLUDED_DUPLICATE)
     eligible = [int(r["idx"]) for r in rows if int(r["idx"]) not in excluded]
     order = eligible[:]
@@ -62,6 +63,11 @@ def main():
         "pilot_40": order[:40],
         "sample_150": order[:150],
     }
+    return res
+
+
+def main():
+    res = compute()
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "sample.json").write_text(json.dumps(res, indent=1))
     print({k: v for k, v in res.items() if k not in ("random_order", "sample_150")})

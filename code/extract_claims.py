@@ -18,7 +18,8 @@ SIZE = re.compile(r"[^.]{0,60}\b(303|297|1025|1,025|918|270|920|1190|1,190)\b[^.
 def text_of(path: str) -> str:
     if path.lower().endswith(".pdf"):
         return "\n".join((p.extract_text() or "") for p in PdfReader(path).pages)
-    return open(path, errors="replace").read()
+    with open(path, errors="replace") as f:
+        return f.read()
 
 
 def main(path: str):

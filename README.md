@@ -41,7 +41,7 @@ Requires [uv](https://docs.astral.sh/uv/).
 
 ```bash
 uv sync
-uv run pytest                               # 35 tests; asserts every E1-E4 and E7 number in the paper
+uv run pytest                               # asserts every E1-E4, E7 and E9(a-b) number in the paper
 uv run python code/evidence_checks.py       # prints E1-E4 and E7 (OpenML, PMLB)
 uv run python code/evidence_checks.py --copies   # adds the Kaggle copies, if downloaded (see below)
 uv run python code/invariance.py            # E9(a-b): classical models under both codings
