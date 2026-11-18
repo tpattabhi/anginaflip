@@ -26,3 +26,6 @@ evidence/kaggle/*/
 evidence/literature-audit/second-coder/KEY-do-not-open-until-done.tsv
 
 .DS_Store
+
+# Outreach drafts (personal correspondence)
+outreach/
