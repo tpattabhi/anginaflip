@@ -29,3 +29,6 @@ evidence/literature-audit/second-coder/KEY-do-not-open-until-done.tsv
 
 # Outreach drafts (personal correspondence)
 outreach/
+
+# Session handoff (contains personal outreach details)
+SESSION-HANDOFF.md
