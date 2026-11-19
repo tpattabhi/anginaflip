@@ -10,14 +10,14 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 
-% DRAFT 18 Nov 2026. Every number in this file is taken from RESULTS.md and the
+% Preprint v1, 18 Nov 2026. Every number in this file is taken from RESULTS.md and the
 % evidence/ folders; the source file for each is named in a comment beside it.
 
 \title{Typical Angina, Reversed: A Chest-Pain Coding Error in the UCI Heart Disease Data That Has Persisted Since 1990}
 \author{Tejas Tovinkere Pattabhi\\
 University of the Cumberlands, Williamsburg, KY, USA\\
 \texttt{tpattabhi65846@ucumberlands.edu}}
-\date{Draft, 18 November 2026}
+\date{Preprint, version 1, 18 November 2026}
 
 \begin{document}
 \maketitle
@@ -28,7 +28,7 @@ The UCI Heart Disease data are among the most widely used benchmark datasets in 
 Two independent checks establish this:
 (i) the chest-pain table and regression coefficients of the original 1986 Cleveland study are reproduced only under the reversed reading;
 (ii) in the Budapest, Swiss and Long Beach files, 93--96\% of patients coded 4 have all three classical angina features.
-A 1990 word-labelled Cleveland file already uses the reversed reading, and Statlog (Heart), a Cleveland subset, inherits it. So do OpenML, PMLB and the most-downloaded Kaggle copies (about 676{,}000 downloads for the two largest).
+A 1990 word-labeled Cleveland file already uses the reversed reading, and Statlog (Heart), a Cleveland subset, inherits it. So do OpenML, PMLB and the most-downloaded Kaggle copies (about 676{,}000 downloads for the two largest).
 
 In a pre-specified audit of a random sample of 150 papers (124 readable), 32 state a direction for a named chest-pain category. In 25 of them (78\%; 95\% CI 61--89\%) the direction is clinically backwards, nine explain it clinically, and none identifies the reversal.
 
@@ -257,12 +257,10 @@ More generally, a benchmark variable whose effect contradicts settled domain kno
 The UCI Heart Disease chest-pain variable has been documented in reverse since at least 1990. The error leaves predictive benchmarks untouched, which is why it persisted. It reverses explanations, it misleads language-model classifiers, and it has entered the published literature as a clinical finding. Correcting the documentation is simple, and the evidence and code to do so are public.
 
 \section*{Data and code availability}
-All evidence files, scripts, the literature-audit coding and the LLM-probe notebook are available at \url{https://github.com/tpattabhi/anginaflip}. % TODO(user): make the repository public before posting.
+All evidence files, scripts, the literature-audit coding and the LLM-probe notebook are available at \url{https://github.com/tpattabhi/anginaflip}.
 
 \section*{Acknowledgments and disclosures}
-This work received no funding. The author reports no competing interests. The work was done independently and is not affiliated with any employer.
-% TODO(user): AI-use disclosure, final wording to be approved by the author. Suggested:
-% "The author used Claude (Anthropic) to assist with code, literature retrieval and drafting. The author reviewed, verified and takes responsibility for all content."
+This work received no funding. The author reports no competing interests. The work was done independently and is not affiliated with any employer. The author used Claude (Anthropic) to assist with code, literature retrieval and drafting. The author reviewed, verified and takes responsibility for all content.
 
 \bibliographystyle{unsrtnat}
 \bibliography{refs}
