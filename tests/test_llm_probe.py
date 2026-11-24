@@ -114,3 +114,57 @@ def test_bootstrap_zero_when_identical():
     p = np.linspace(0.1, 0.9, 40)
     bs = lp.paired_bootstrap(y, p, p, lp.auc, n_boot=50)
     assert bs["diff"] == 0 and bs["lo"] == 0 and bs["hi"] == 0
+
+
+# --- Per-patient scores from the Kaggle run (results/llm_probe/all_scores.csv) ---
+
+SCORES = ROOT / "results" / "llm_probe" / "all_scores.csv"
+SUMMARY = ROOT / "results" / "llm_probe" / "summary.csv"
+
+# Table 4 of the paper: AUC D, AUC C, AUC no cp, dAUC [lo, hi].
+PAPER_TABLE = {
+    ("Qwen2.5-7B-Instruct-bnb-4bit", "full"): (0.844, 0.861, 0.859, 0.016, 0.004, 0.030),
+    ("Qwen2.5-7B-Instruct-bnb-4bit", "minimal"): (0.458, 0.789, 0.637, 0.331, 0.240, 0.425),
+    ("Meta-Llama-3.1-8B-Instruct-bnb-4bit", "full"): (0.512, 0.589, 0.477, 0.077, 0.043, 0.114),
+    ("Meta-Llama-3.1-8B-Instruct-bnb-4bit", "minimal"): (0.542, 0.779, 0.626, 0.238, 0.145, 0.338),
+    ("Phi-3.5-mini-instruct-bnb-4bit", "full"): (0.855, 0.856, 0.837, 0.002, -0.012, 0.016),
+    ("Phi-3.5-mini-instruct-bnb-4bit", "minimal"): (0.673, 0.795, 0.638, 0.122, 0.056, 0.191),
+}
+
+
+@pytest.fixture(scope="module")
+def scores():
+    return pd.read_csv(SCORES)
+
+
+def test_scores_shape(scores):
+    assert len(scores) == 3 * 2 * 3 * 303
+
+
+def test_summary_recomputes_from_per_patient_scores(scores):
+    s = lp.summarise(scores).set_index(["model", "template"]).sort_index()
+    ref = pd.read_csv(SUMMARY).set_index(["model", "template"]).sort_index()
+    for col in ref.columns:
+        assert s[col].to_numpy() == pytest.approx(ref[col].to_numpy(), abs=1e-12)
+
+
+def test_paper_table_matches_per_patient_scores(scores):
+    s = lp.summarise(scores).set_index(["model", "template"])
+    for key, (d, c, o, dd, lo, hi) in PAPER_TABLE.items():
+        r = s.loc[key]
+        got = (r["auc_D"], r["auc_C"], r["auc_O"], r["d_auc_C_minus_D"], r["d_auc_lo"], r["d_auc_hi"])
+        assert [round(x, 3) for x in got] == pytest.approx([d, c, o, dd, lo, hi], abs=1e-9)
+
+
+def _reversed(mp, model, template):
+    row = mp.set_index(["model", "template", "condition"])
+    c, d = row.loc[(model, template, "C")], row.loc[(model, template, "D")]
+    return c[4] > c[1] and d[4] < d[1]
+
+
+def test_risk_gradient_reversal(scores):
+    """Paper: the gradient reverses in all three models with the minimal template, and in Llama only with full."""
+    mp = lp.mean_p_by_code(scores)
+    models = sorted(scores["model"].unique())
+    assert all(_reversed(mp, m, "minimal") for m in models)
+    assert [m for m in models if _reversed(mp, m, "full")] == ["Meta-Llama-3.1-8B-Instruct-bnb-4bit"]

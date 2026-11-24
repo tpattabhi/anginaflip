@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
 title: "Typical Angina, Reversed: A Long-Standing Documentation Error in the UCI Heart Disease Data"
-version: "5"
+version: "6"
 authors:
   - family-names: Pattabhi
     given-names: Tejas Tovinkere

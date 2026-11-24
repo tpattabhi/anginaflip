@@ -11,14 +11,14 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 
-% Preprint, version 5, 23 Nov 2026. Every number in this file is taken from RESULTS.md and the
+% Preprint, version 6, 23 Nov 2026. Every number in this file is taken from RESULTS.md and the
 % evidence/ folders; the source file for each is named in a comment beside it.
 
 \title{Typical Angina, Reversed: A Long-Standing Documentation Error in the UCI Heart Disease Data}
 \author{Tejas Tovinkere Pattabhi\\
 University of the Cumberlands, Williamsburg, KY, USA\\
 \texttt{tpattabhi65846@ucumberlands.edu}}
-\date{Preprint, version 5, 23 November 2026}
+\date{Preprint, version 6, 23 November 2026}
 
 \begin{document}
 \maketitle
@@ -218,11 +218,11 @@ Table~\ref{tab:llm} gives the results.
 \item Corrected labels improved log loss in all six model--template pairs.
 \item With the minimal template, corrected labels improved AUC by 0.12--0.33 in all three models. With the documented labels, Qwen's AUC fell to 0.458, at or below chance, and Qwen and Llama both scored worse than with chest pain omitted.
 \item With the full template, AUC improved in two of three models (Qwen $+0.016$, Llama $+0.077$; intervals exclude 0). Phi was unchanged.
-\item For Llama with the minimal template, mean predicted risk rose from code 1 to code 4 under the corrected labels (0.02 to 0.29) and fell under the documented labels (0.29 to 0.02).
+\item For Llama with the minimal template, mean predicted risk rose from code 1 to code 4 under the corrected labels (0.02 to 0.29) and fell under the documented labels (0.29 to 0.02). Qwen and Phi showed the same reversal with the minimal template, although their predicted probabilities stayed below 0.001 throughout.
 \end{itemize}
-Llama discriminated poorly on the full template under both labelings (AUC 0.51--0.59), so its full-template gain should be read with caution. We set a threshold in advance for scaling the probe up to larger models: an AUC gain of at least 0.02 on the full template in two models, or a reversed risk gradient in two models. Only one model met it among those that could be assessed (the logged mean risks for Qwen's minimal template and for Phi round to zero), so we report the full-template effect as modest.
+Llama discriminated poorly on the full template under both labelings (AUC 0.51--0.59), so its full-template gain should be read with caution. We set a threshold in advance for scaling the probe up to larger models: an AUC gain of at least 0.02 on the full template in two models, or a reversed risk gradient in two models. The AUC criterion was met by one model (Llama). The gradient criterion was met: with the minimal template the gradient reversed in all three models, and with the full template in Llama only. We report the full-template effect as modest.
 
-\textbf{Protocol deviation.} The protocol specified a replication on the UCI Hungarian data, to be reported if the primary hypothesis held. The primary hypothesis held for Qwen and Llama, but we did not run the replication, because the separate scale-up threshold was not met. We record this as a deviation from the protocol. The pre-specified Brier-score comparison was not logged and is not reported, and the runs used Kaggle rather than Colab GPUs.
+\textbf{Protocol deviation.} The protocol specified a replication on the UCI Hungarian data, to be reported if the primary hypothesis held. The primary hypothesis held for Qwen and Llama, and the scale-up threshold was met through the risk gradient, but neither the Hungarian replication nor the scale-up to larger models was run. We record both as deviations from the protocol. The pre-specified Brier-score differences were computed but are not discussed here; they are in the repository with the per-patient scores. The runs used Kaggle rather than Colab GPUs.
 
 \begin{table}[t]
 \centering
@@ -270,7 +270,7 @@ More generally, a benchmark variable whose effect contradicts settled domain kno
 \item \textbf{Single coder:} the audit was coded by one author. An independent, blinded second coding of all 32 direction-stating papers and 20 others is planned; the materials are in the repository.
 \item \textbf{Unread papers:} 17\% of sampled papers could not be read.
 \item \textbf{Text-only extraction:} claims shown only in figures were not captured, so the counts of inconsistent statements are lower bounds.
-\item \textbf{LLM probe:} small quantized models, one prompt format, zero-shot only, and one site. The findings may not hold for few-shot or fine-tuned methods, where the data can override the label text. The pre-specified Hungarian replication was not run, and the per-patient scores are not yet in the repository.
+\item \textbf{LLM probe:} small quantized models, one prompt format, zero-shot only, and one site. The findings may not hold for few-shot or fine-tuned methods, where the data can override the label text. The pre-specified Hungarian replication was not run.
 \item \textbf{Copies checked:} Kaggle copies were selected from a list sorted by votes, not downloads; other popular copies may differ.
 \end{itemize}
 
