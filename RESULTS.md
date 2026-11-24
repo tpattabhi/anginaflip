@@ -1,4 +1,6 @@
-# AnginaFlip: overnight results and go/no-go (18 Nov 2026)
+# AnginaFlip: interim results, 18 Nov 2026 (superseded by the paper)
+
+> **Superseded.** This file records the interim results of 18 Nov 2026. The current numbers and wording are in `paper/main.tex`; the row-level literature-audit table is `evidence/literature-audit/direction-stating-32.tsv`; the per-patient language-model scores are in `results/llm_probe/`. Where this file and the paper differ, the paper is correct.
 
 ## Bottom line
 **GO.** Every pillar is backed by data:

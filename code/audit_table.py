@@ -22,8 +22,24 @@ OTHER_CAUSE = {
     51: "own mapping (ASY = type 2)",
     98: "outcome reversal in the Kaggle 1,025 copy",
 }
-# Year as given by the full text where the Scholar listing is wrong (k51: listed 2030, full text 2025).
-YEAR_FIX = {51: "2025"}
+# Year as given by the full text where the Scholar listing is wrong (k51: listed 2030, full text 2025; k123: 2011 read from its arXiv ID 2011.03195, paper 2020).
+YEAR_FIX = {51: "2025", 123: "2020"}
+# Copy as identified from the paper itself where the coding sheet was imprecise
+# (k123: Dave et al. 2020, footnote 3, kaggle.com/cherngs/heart-disease-cleveland-uci, 297 rows, code = UCI - 1).
+COPY_FIX = {123: "Kaggle cherngs 297 (UCI codes minus 1)"}
+# Copy group used for the by-copy breakdown in Section 4.
+UCI_LABELS, FEDESORIANO, RECODED, UNIDENTIFIED = (
+    "UCI codes or labels (incl. 1,190-row merges, Statlog)",
+    "fedesoriano 918 (ASY/TA words)",
+    "recoded Kaggle copy (cp 0-3)",
+    "copy not identified",
+)
+COPY_GROUP = {
+    **dict.fromkeys([1, 16, 18, 21, 25, 46, 54, 68, 85, 93, 96, 111, 131, 138], UCI_LABELS),
+    **dict.fromkeys([23, 29, 36, 63, 65, 117], FEDESORIANO),
+    **dict.fromkeys([20, 44, 51, 88, 98, 106, 123, 144], RECODED),
+    **dict.fromkeys([17, 57, 81, 110], UNIDENTIFIED),
+}
 # Dropped in the sensitivity analysis (hedged, illustrative, single-patient, mixed, inconsistently mapped).
 SENSITIVITY_DROP = {68, 131, 138, 25, 51, 110}
 
@@ -83,6 +99,8 @@ def build() -> list[dict]:
             cause = OTHER_CAUSE.get(k, "documented labels")
         title, link, year = titles.get(k, ("", "", ""))
         year = YEAR_FIX.get(k, year)
+        if k in COPY_FIX:
+            r["copy"] = COPY_FIX[k]
         out.append(
             {
                 "k": k,
@@ -91,6 +109,7 @@ def build() -> list[dict]:
                 "link": link,
                 **r,
                 "cause": cause,
+                "copy_group": COPY_GROUP[k],
                 "in_sensitivity_set": "no" if k in SENSITIVITY_DROP else "yes",
             }
         )

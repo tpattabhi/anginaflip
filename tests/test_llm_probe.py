@@ -162,8 +162,8 @@ def _reversed(mp, model, template):
     return c[4] > c[1] and d[4] < d[1]
 
 
-def test_risk_gradient_reversal(scores):
-    """Paper: the gradient reverses in all three models with the minimal template, and in Llama only with full."""
+def test_code1_code4_ordering_reversal(scores):
+    """Paper: the code-1/code-4 ordering reverses in all three models (minimal template) and in Llama only (full)."""
     mp = lp.mean_p_by_code(scores)
     models = sorted(scores["model"].unique())
     assert all(_reversed(mp, m, "minimal") for m in models)

@@ -3,7 +3,7 @@
 **Purpose:** an independent check of the primary coding.
 - There are 52 papers in random order, in `form.tsv`.
 - Code each one from the paper itself.
-- **Do not open `KEY-do-not-open-until-done.tsv`, `audit-150-summary.md`, `round3-access-notes.md` or the coding files until you have finished.**
+- **Do not open `KEY-do-not-open-until-done.tsv`, `audit-150-summary.md`, `round3-access-notes.md`, `direction-stating-32.tsv` or the coding files until you have finished.**
 
 **Time:** about 3 to 4 minutes per paper; most papers need only a word search.
 

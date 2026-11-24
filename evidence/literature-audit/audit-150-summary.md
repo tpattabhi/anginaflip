@@ -1,5 +1,7 @@
 # E8: literature audit, full sample of 150 (18 Nov 2026)
 
+> The authoritative row-level table is `direction-stating-32.tsv` (built by `code/audit_table.py`). Figures below are from the 18 Nov coding rounds and are superseded where they differ.
+
 Per `PROTOCOL-literature-audit.md`: the first 150 of the seeded order, staged coding. Items 0–79 were first coded overnight (`pilot40-coding.md`). On 18 Nov the remaining items were coded, and inaccessible ones retried, using the user's University of the Cumberlands library access; rows are in `coding-80-149-and-retries.tsv`. No item was replaced or re-ordered. Inaccessible items are counted, not replaced.
 
 > **Update, round 3 (18 Nov, later):** 16 of the 46 inaccessible items were recovered through UC Primo → EBSCO Academic Search Complete, open repository copies, and preprint servers. Details are in `round3-access-notes.md`.
