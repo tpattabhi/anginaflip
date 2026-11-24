@@ -1,6 +1,6 @@
 # E8: literature audit, full sample of 150 (18 Nov 2026)
 
-> The authoritative row-level table is `direction-stating-32.tsv` (built by `code/audit_table.py`). Figures below are from the 18 Nov coding rounds and are superseded where they differ.
+> **Superseded.** This file records the interim audit results of 18 Nov 2026. The current numbers and wording are in `paper/main.tex` (Section 4), including the sensitivity analysis (18 of 27 attributable; 20 of 27 counting all inconsistencies). The row-level table is `direction-stating-32.tsv` (built by `code/audit_table.py`). Where this file and the paper differ, the paper is correct.
 
 Per `PROTOCOL-literature-audit.md`: the first 150 of the seeded order, staged coding. Items 0–79 were first coded overnight (`pilot40-coding.md`). On 18 Nov the remaining items were coded, and inaccessible ones retried, using the user's University of the Cumberlands library access; rows are in `coding-80-149-and-retries.tsv`. No item was replaced or re-ordered. Inaccessible items are counted, not replaced.
 

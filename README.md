@@ -10,7 +10,7 @@ The error has been present since at least 1990. It has spread to OpenML, PMLB an
 
 This repository holds the evidence, the analyses and the paper:
 
-> T. T. Pattabhi, *Typical Angina, Reversed: A Long-Standing Documentation Error in the UCI Heart Disease Data*. Preprint, version 7, 23 Nov 2026 (`paper/`, tag `v7-preprint`). An earlier version (18 Nov 2026), titled *Typical Angina, Reversed: A Chest-Pain Coding Error in the UCI Heart Disease Data That Has Persisted Since 1990*, is on Zenodo: doi:[10.5281/zenodo.24358545](https://doi.org/10.5281/zenodo.24358545)
+> T. T. Pattabhi, *Typical Angina, Reversed: A Long-Standing Documentation Error in the UCI Heart Disease Data*. Preprint, version 8, 24 Nov 2026 (`paper/`, tag `v8-preprint`). An earlier version (18 Nov 2026), titled *Typical Angina, Reversed: A Chest-Pain Coding Error in the UCI Heart Disease Data That Has Persisted Since 1990*, is on Zenodo: doi:[10.5281/zenodo.24358545](https://doi.org/10.5281/zenodo.24358545)
 
 ## The correction
 

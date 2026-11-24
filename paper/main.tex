@@ -11,14 +11,14 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 
-% Preprint, version 7, 23 Nov 2026. Every number in this file is taken from RESULTS.md and the
+% Preprint, version 8, 24 Nov 2026. Every number in this file is taken from RESULTS.md and the
 % evidence/ folders; the source file for each is named in a comment beside it.
 
 \title{Typical Angina, Reversed: A Long-Standing Documentation Error in the UCI Heart Disease Data}
 \author{Tejas Tovinkere Pattabhi\\
 University of the Cumberlands, Williamsburg, KY, USA\\
 \texttt{tpattabhi65846@ucumberlands.edu}}
-\date{Preprint, version 7, 23 November 2026}
+\date{Preprint, version 8, 24 November 2026}
 
 \begin{document}
 \maketitle
@@ -26,14 +26,14 @@ University of the Cumberlands, Williamsburg, KY, USA\\
 \begin{abstract}
 The UCI Heart Disease data are a widely used machine-learning benchmark. We show that their chest-pain variable is stored in reverse of its documentation. At all four sites, the code documented as ``asymptomatic'' (4) marks patients with typical angina, and the code documented as ``typical angina'' (1) marks patients with almost none of the classical angina features (at Cleveland, no chest pain).
 
-Two independent checks establish this:
+Two complementary checks establish this:
 (i) the chest-pain table and regression coefficients of the original 1986 Cleveland study are reproduced only under the corrected reading;
 (ii) in the Budapest, Switzerland and Long Beach files, 93--96\% of patients coded 4 have all three classical angina features.
-A 1990 word-labeled Cleveland file already uses the documented labels, and Statlog (Heart), a Cleveland subset, stores the same codes. So do OpenML, PMLB and two highly voted Kaggle copies that name the categories (about 400{,}000 downloads combined).
+A 1990 word-labeled Cleveland file already uses the documented labels, and Statlog (Heart), a Cleveland subset, stores the same codes. OpenML, PMLB and two highly voted Kaggle copies that name the categories use the same documented labels (about 400{,}000 downloads combined).
 
-We audited a seeded random sample of 150 records from a pre-specified Google Scholar query for SHAP studies of these data mentioning asymptomatic chest pain (124 readable). Of 32 papers that state a direction for a named category, 25 (78\%; 95\% CI 61--89\%) state one inconsistent with the corrected category identities; 22 (69\%; 51--82\%; post hoc) are attributable to the documentation error, and nine of these explain it clinically. None of the 124 readable papers identifies the reversal.
+We audited a seeded random sample of 150 records from a pre-specified Scholar query for SHAP studies of these data mentioning asymptomatic chest pain (124 readable). Of 32 papers that state a direction for a named category, 25 (78\%; 95\% CI 61--89\%) state one inconsistent with the corrected category identities; 22 (69\%; 51--82\%; post hoc) are attributable to the documentation error, and nine of these explain it clinically. None of the 124 readable papers identifies the reversal.
 
-Conventional models are essentially unaffected, one reason the error went unnoticed. Interpretations that attach the documented category names to model effects are reversed, and zero-shot language-model classifiers that read the labels as text are misled: with the documented labels, three open-weight models lose 0.12--0.33 in area under the receiver operating characteristic curve (AUC) given age, sex and chest-pain type.
+Conventional models are essentially unaffected, one reason the error went unnoticed. Interpretations that attach the documented names to model effects are reversed, and zero-shot language-model classifiers that read the labels are misled: with the documented labels, three open-weight models lose 0.12--0.33 in area under the receiver operating characteristic curve (AUC) given age, sex and chest-pain type.
 
 We give the corrected mapping, evidence and code.
 \end{abstract}
@@ -45,7 +45,7 @@ The Heart Disease data of the UCI (University of California, Irvine) Machine Lea
 Under this reading, the data say that patients without chest pain are the most likely to have CAD: 72.9\% of Cleveland patients coded ``asymptomatic'' have CAD, against 30.4\% of those coded ``typical angina''. % results/invariance.json
 This contradicts a basic and well-established gradient in cardiology. Typical angina is the presentation most predictive of CAD, and the absence of chest pain the least \cite{diamond1979}.
 
-We show that the gradient is not a property of the patients but of the documentation: the codes are stored in reverse. Section~\ref{sec:evidence} establishes the reversal with two independent checks, dates it and shows that Statlog (Heart) inherits it. Section~\ref{sec:spread} traces the documented labels into widely used copies. Section~\ref{sec:audit} measures how published work interprets the variable. Section~\ref{sec:consequences} examines what the error does and does not change.
+We show that the gradient is not a property of the patients but of the documentation: the codes are stored in reverse. Section~\ref{sec:evidence} establishes the reversal with two complementary checks, one for Cleveland and one for the other three sites, dates it and shows that Statlog (Heart) inherits it. Section~\ref{sec:spread} traces the documented labels into widely used copies. Section~\ref{sec:audit} measures how published work interprets the variable. Section~\ref{sec:consequences} examines what the error does and does not change.
 
 The error matters for two reasons.
 \begin{itemize}
@@ -55,7 +55,7 @@ The error matters for two reasons.
 
 \textbf{Contributions.}
 \begin{enumerate}
-\item Evidence from two independent sources that \texttt{cp} is stored in reverse at all four sites, a dating of the error to 1990 or earlier, and evidence that Statlog (Heart) inherits it.
+\item Evidence from two complementary sources, one for Cleveland and one for the other three sites, that \texttt{cp} is stored in reverse at all four sites, a dating of the error to 1990 or earlier, and evidence that Statlog (Heart) inherits it.
 \item A trace of the documented labels through OpenML, PMLB (Penn Machine Learning Benchmarks) and Kaggle.
 \item A pre-specified audit of a seeded random sample of 150 records from a targeted literature query.
 \item An evaluation of the consequences for classical models, interpretations of their chest-pain effects, and language-model classifiers.
@@ -159,7 +159,7 @@ PMLB \texttt{heart\_disease\_*} \cite{pmlb} & UCI$-1$, documented 0 = typical an
 The protocol was fixed before any full text was read; later changes are logged with dates in the accompanying repository.
 \begin{itemize}
 \item \textbf{Frame:} Google Scholar records from 2010 onward matching \textit{``chest pain'' ``asymptomatic'' ``Cleveland'' ``heart disease'' ``SHAP''} (269 records; 230 eligible after removing off-topic records and duplicates).
-\item \textbf{Sample:} the first 150 records of a seeded random order (seed 20261117).
+\item \textbf{Sample:} the first 150 records of a seeded random order (seed 20261117) of the 230 eligible records.
 \item \textbf{Inclusion:} a paper is included if its full text states a direction for a named chest-pain category, from its own data or model. Importance without a sign, numeric-only statements and background text were not counted.
 \item \textbf{Coding:} for each included paper we recorded the copy used, the verbatim claim, whether the stated direction is clinically correct, and whether the paper explains the direction clinically.
 \item \textbf{Not reported:} the pre-specified citation-weighted totals (descriptive) were not computed.
@@ -169,7 +169,7 @@ The protocol was fixed before any full text was read; later changes are logged w
 \paragraph{Results.}
 124 of the 150 full texts were readable.
 \begin{itemize}
-\item \textbf{Direction-stating papers:} 32 state a direction for a named category. In 25 of the 32 (78\%; 95\% Wilson interval \cite{wilson1927} 61--89\%), the pre-specified outcome, the stated direction is inconsistent with the corrected category identities. Most report the category labeled asymptomatic as highest risk, or typical angina as lowest. Three of these are inconsistent for other reasons: two rest on Kaggle copies whose outcome is reversed, and one uses its own mapping. Excluding them, a refinement defined after coding, leaves 22 of 32 (69\%; 51--82\%) attributable to the documented labels. Statements based on recoded Kaggle copies count as attributable only when the inconsistency comes from naming a category through the documented UCI label (for example, code 0 read as asymptomatic), not from the copy's reversed outcome.
+\item \textbf{Direction-stating papers:} 32 state a direction for a named category. In 25 of the 32 (78\%; 95\% Wilson interval \cite{wilson1927} 61--89\%), the pre-specified outcome, the stated direction is inconsistent with the corrected category identities. Most report the category labeled asymptomatic as highest risk, or typical angina as lowest. Three of these are inconsistent for other reasons: two rest on Kaggle copies whose outcome is reversed, and one uses its own mapping. Excluding them, a secondary refinement defined after coding, leaves 22 of 32 (69\%; 51--82\%) attributable to the documented labels. Statements based on recoded Kaggle copies count as attributable only when the inconsistency comes from naming a category through the documented UCI label (for example, code 0 read as asymptomatic), not from the copy's reversed outcome.
 \item \textbf{Sensitivity analysis} (criteria partly defined after coding): excluding hedged, illustrative, single-patient, mixed and inconsistently mapped statements leaves 18 of 27 attributable to the documentation (67\%; 48--81\%), or 20 of 27 counting all inconsistencies (74\%; 55--87\%). Applying the same criteria to the correct-sounding statements removes one more, giving 18 of 26 (69\%; 50--83\%).
 \item \textbf{Typical wording:} ``Patients with asymptomatic chest pain (ASY) are about six times more likely to suffer heart disease than those with Atypical Angina\ldots'' \cite{baghdadi2023}.
 \item \textbf{Rationalized errors:} nine of the 22 also explain the inconsistent direction clinically, for example:
@@ -223,9 +223,9 @@ Table~\ref{tab:llm} gives the results.
 \end{itemize}
 Phi (both templates) and Qwen (minimal template) almost never favored ``Yes'': no patient's P(Yes) exceeded 0.015 for Phi or 0.003 for Qwen with the minimal template, under any condition. Their AUC differences therefore reflect the ranking of very small probabilities, and their Brier-score differences are negligible ($|\Delta\text{Brier}| \le 0.0003$; for Phi with the full template the interval includes 0). For Llama (both templates) and Qwen (full template), the Brier score improved with the corrected labels ($\Delta$Brier $-0.022$ to $-0.144$; intervals exclude 0).
 
-Llama discriminated poorly on the full template under both labelings (AUC 0.51--0.59), so its full-template gain should be read with caution. We set a threshold in advance for scaling the probe up to larger models: an AUC gain of at least 0.02 on the full template in two models, or a reversed risk gradient in two models. The AUC criterion was met by one model (Llama). The gradient criterion, assessed at the end codes, was met: with the minimal template the ordering of codes 1 and 4 reversed in all three models, and with the full template in Llama only. We report the full-template effect as modest.
+Llama discriminated poorly on the full template under both labelings (AUC 0.51--0.59), so its full-template gain should be read with caution. We set a threshold in advance for scaling the probe up to larger models: an AUC gain of at least 0.02 on the full template in two models, or a reversed risk gradient in two models. On the full template, neither criterion holds in two models. The AUC gain reached 0.02 only for Llama (Qwen $+0.016$, Phi $+0.002$), and the ordering of codes 1 and 4 reversed only for Llama. With the minimal template, the ordering of codes 1 and 4 reversed in all three models, but for Qwen and Phi the mean probabilities being compared are all below 0.001. In no model or template does mean P(Yes) rise steadily across codes 1, 2, 3 and 4 under the corrected labels; the reversal holds only when code 1 is compared with code 4. The protocol does not say which template the gradient criterion refers to, or whether ``rises'' means from code 1 to code 4 or at every step. The threshold is therefore met only on the reading that uses the minimal template and compares the end codes. We report the full-template effect as modest.
 
-\textbf{Protocol deviation.} The protocol specified a replication on the UCI Hungarian data, to be reported if the primary hypothesis held. The primary hypothesis held for Qwen and Llama, and the scale-up threshold was met through the reversed ordering of codes 1 and 4, but neither the Hungarian replication nor the scale-up to larger models was run. We record both as deviations from the protocol. The pre-specified Brier-score differences are summarized above and listed in the repository with the per-patient scores. The runs used Kaggle rather than Colab GPUs.
+\textbf{Protocol deviation.} The protocol specified a replication on the UCI Hungarian data, to be reported if the primary hypothesis held. The primary hypothesis held for Qwen and Llama. The scale-up threshold is met only on the reading described above (minimal template, end codes), and on the full template it is not met. Neither the Hungarian replication nor the scale-up to larger models was run. We record both as deviations from the protocol. The pre-specified Brier-score differences are summarized above and listed in the repository with the per-patient scores. The runs used Kaggle rather than Colab GPUs.
 
 \begin{table}[t]
 \centering
@@ -269,10 +269,10 @@ More generally, a benchmark variable whose effect contradicts settled domain kno
 \paragraph{Limitations.}
 \begin{itemize}
 \item \textbf{Cleveland evidence:} the Cleveland raw file lacks the pain features, so the evidence for Cleveland rests on the original study alone. The 1990 file dates the reading, and Statlog only shows inheritance.
-\item \textbf{Literature frame:} the frame is one Scholar query that requires the words asymptomatic and SHAP. Our rates describe direction-stating papers in this frame, not the whole literature.
-\item \textbf{Single coder:} the audit was coded by one author. An independent, blinded second coding of all 32 direction-stating papers and 20 others is planned; the materials are in the repository.
+\item \textbf{Literature frame:} the frame is one Scholar query that requires the words asymptomatic and SHAP. Our rates describe direction-stating papers in this frame, not the whole literature. Because the query requires the word asymptomatic, papers in the frame are probably more likely to state a direction for that category than papers in general, so the 78\% may be higher than in the wider literature.
+\item \textbf{Single coder:} the audit was coded by one author. The 25 of 32 rests on the pre-specified categories; the 22 of 32 and the sensitivity counts also rest on categories defined after coding, and none of these has yet been checked by a second coder. An independent, blinded second coding of all 32 direction-stating papers and 20 others is planned; it will report agreement for each figure, and the materials are in the repository.
 \item \textbf{Unread papers:} 17\% of sampled papers could not be read.
-\item \textbf{Text-only extraction:} claims shown only in figures were not captured, so the counts of inconsistent statements are lower bounds.
+\item \textbf{Text-only extraction:} claims shown only in figures were not captured, so the counts of inconsistent statements are lower bounds. The percentages could move either way, because the number of direction-stating papers could also change.
 \item \textbf{LLM probe:} small quantized models, one prompt format, zero-shot only, and one site. The findings may not hold for few-shot or fine-tuned methods, where the data can override the label text. The pre-specified Hungarian replication was not run.
 \item \textbf{Copies checked:} Kaggle copies were selected from a list sorted by votes, not downloads; other popular copies may differ.
 \end{itemize}

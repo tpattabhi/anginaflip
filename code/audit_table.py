@@ -5,6 +5,12 @@ Sources (later ones override earlier ones for the same k):
   evidence/literature-audit/coding-80-149-and-retries.tsv (k 40-149 and retries)
   evidence/literature-audit/round3-access-notes.md     (round 3: newly accessed papers)
 Writes evidence/literature-audit/direction-stating-32.tsv.
+
+Sensitivity columns (Section 4 of the paper):
+  in_sensitivity_set_27  main sensitivity set: all 32 minus the five dropped inconsistent statements
+                         (k68, k131, k138, k25, k51); gives 18 of 27 attributable and 20 of 27 inconsistent.
+  in_sensitivity_set_26  the same criteria applied to the correct-sounding statements as well, which also
+                         drops k110; gives 18 of 26 attributable.
 Run: uv run python code/audit_table.py
 """
 
@@ -41,7 +47,8 @@ COPY_GROUP = {
     **dict.fromkeys([17, 57, 81, 110], UNIDENTIFIED),
 }
 # Dropped in the sensitivity analysis (hedged, illustrative, single-patient, mixed, inconsistently mapped).
-SENSITIVITY_DROP = {68, 131, 138, 25, 51, 110}
+SENSITIVITY_DROP_27 = {68, 131, 138, 25, 51}  # inconsistent statements only (main sensitivity set)
+SENSITIVITY_DROP_26 = SENSITIVITY_DROP_27 | {110}  # criteria also applied to correct-sounding statements
 
 
 def _verdict(cell: str) -> str | None:
@@ -110,7 +117,8 @@ def build() -> list[dict]:
                 **r,
                 "cause": cause,
                 "copy_group": COPY_GROUP[k],
-                "in_sensitivity_set": "no" if k in SENSITIVITY_DROP else "yes",
+                "in_sensitivity_set_27": "no" if k in SENSITIVITY_DROP_27 else "yes",
+                "in_sensitivity_set_26": "no" if k in SENSITIVITY_DROP_26 else "yes",
             }
         )
     return out
@@ -127,7 +135,7 @@ if __name__ == "__main__":
     inc = [r for r in table if r["verdict"] == "inconsistent"]
     doc = [r for r in inc if r["cause"] == "documented labels"]
     rat = [r for r in doc if r["rationalised"].lower().startswith("yes")]
-    sens = [r for r in table if r["in_sensitivity_set"] == "yes"]
+    sens = [r for r in table if r["in_sensitivity_set_26"] == "yes"]
     print(
         f"direction-stating {len(table)}; inconsistent {len(inc)}; attributable {len(doc)}; rationalised among attributable {len(rat)}"
     )

@@ -13,7 +13,7 @@ def test_table_reproduces_paper_counts():
     t = audit_table.build()
     inc = [r for r in t if r["verdict"] == "inconsistent"]
     doc = [r for r in inc if r["cause"] == "documented labels"]
-    sens = [r for r in t if r["in_sensitivity_set"] == "yes"]
+    sens = [r for r in t if r["in_sensitivity_set_26"] == "yes"]
     assert len(t) == audit_stats.PRIMARY[1] == 32
     assert len(inc) == audit_stats.PRIMARY[0] == 25
     assert len(doc) == audit_stats.ATTRIBUTABLE[0] == 22
@@ -36,3 +36,11 @@ def test_copy_groups_match_paper():
     }
     recoded_other = [r for r in inc if r["copy_group"] == audit_table.RECODED and r["cause"] != "documented labels"]
     assert len(recoded_other) == 3
+
+
+def test_main_sensitivity_set_27():
+    """Section 4: the main sensitivity set gives 18 of 27 attributable and 20 of 27 inconsistent."""
+    sens = [r for r in audit_table.build() if r["in_sensitivity_set_27"] == "yes"]
+    assert len(sens) == audit_stats.SENSITIVITY[1] == audit_stats.SENSITIVITY_ATTRIBUTABLE[1] == 27
+    assert sum(r["verdict"] == "inconsistent" for r in sens) == audit_stats.SENSITIVITY[0] == 20
+    assert sum(r["cause"] == "documented labels" for r in sens) == audit_stats.SENSITIVITY_ATTRIBUTABLE[0] == 18

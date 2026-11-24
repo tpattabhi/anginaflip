@@ -1,0 +1,32 @@
+{
+  "retrieved": "2026-11-24",
+  "source": "https://www.kaggle.com/api/v1/datasets/view/<owner>/<dataset> (public, no login)",
+  "datasets": {
+    "johnsmith88/heart-disease-dataset": {
+      "ref": "johnsmith88/heart-disease-dataset",
+      "title": "Heart Disease Dataset",
+      "ownerName": "David Lapp",
+      "ownerRef": "johnsmith88",
+      "creatorName": "David Lapp",
+      "downloadCount": 386616,
+      "viewCount": 1646438,
+      "voteCount": 1971,
+      "lastUpdated": "2019-06-06T15:33:55.463Z",
+      "licenseName": "Unknown",
+      "subtitle": " Public Health Dataset"
+    },
+    "nareshbhat/health-care-data-set-on-heart-attack-possibility": {
+      "ref": "nareshbhat/health-care-data-set-on-heart-attack-possibility",
+      "title": "Health care: Heart attack possibility ",
+      "ownerName": "Naresha Bhat",
+      "ownerRef": "nareshbhat",
+      "creatorName": "Naresha Bhat",
+      "downloadCount": 43486,
+      "viewCount": 237219,
+      "voteCount": 431,
+      "lastUpdated": "2020-06-25T07:11:26.677Z",
+      "licenseName": "Unknown",
+      "subtitle": "Predicting the heart attack using dataset"
+    }
+  }
+}

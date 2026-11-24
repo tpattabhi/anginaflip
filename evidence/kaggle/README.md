@@ -14,3 +14,5 @@ Usage counts are from the Kaggle dataset list sorted by votes, 17 Nov 2026. The 
 | rishidamarla/heart-disease-prediction | 270 (Statlog) | 48.8K / 186 | UCI codes unchanged | Page not checked |
 
 The check now lives in `code/evidence_checks.py` (`--copies`). The Kaggle CSVs are not redistributed; download them into `evidence/kaggle/<owner>_<slug>/` to rerun it.
+
+Owner names and titles cited in the paper (David Lapp for johnsmith88; Naresha Bhat, "Health care: Heart attack possibility", for nareshbhat) are recorded in `page-metadata-2026-11-24.json`, taken from Kaggle's public dataset metadata on 24 Nov 2026.
