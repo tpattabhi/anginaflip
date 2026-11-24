@@ -4,7 +4,7 @@
 **GO.** Every pillar is backed by data:
 1. The reversal is established by two independent checks (the original 1986 study; the sites' raw angina features). The error is dated to 1990 or earlier, and Statlog (Heart) inherits it.
 2. It spread to every major distribution channel (≈676K Kaggle downloads (18 Nov) across the two biggest copies, OpenML, PMLB).
-3. Published papers read it as medicine: across the full 150-paper sample (124 full texts read), 25 of 32 direction-stating papers are wrong (78%), and none identifies the reversal.
+3. Published papers read it as medicine: across the full 150-paper sample (124 full texts read), 25 of 32 direction-stating papers state a direction inconsistent with the corrected categories (78%, pre-specified); 22 of 32 are attributable to the documented labels (69%, defined after coding); none identifies the reversal. Row-level table: `evidence/literature-audit/direction-stating-32.tsv`.
 4. **It changes LLM predictions.** With the documented labels, LLMs lose 0.12–0.33 AUC on the age/sex/chest-pain task (all 3 models, CIs exclude 0), and 0.016–0.077 on the full task in 2 of 3 models.
 
 **Recommended route:** arXiv preprint first, then a full paper (DMLR, or the NeurIPS Datasets & Benchmarks track). Section 4 makes it an AI paper, not just an erratum.

@@ -38,8 +38,26 @@ def test_documented_labels_give_backwards_coefficients(res):
     assert coefs["cp_typical_angina"] < 0
 
 
-def test_saved_results_match_a_fresh_run(res):
+# Logistic models are deterministic up to floating point. Tree ensembles can differ slightly across
+# platforms and library versions (see "environment" in results/invariance.json), so they get a tolerance.
+SAVED_AUC_TOLERANCE = {
+    "logistic_ordinal": 1e-12,
+    "logistic_onehot": 1e-12,
+    "random_forest": 2e-4,
+    "gradient_boosting": 2e-4,
+}
+
+
+@pytest.mark.parametrize("name,tolerance", SAVED_AUC_TOLERANCE.items())
+def test_saved_results_match_a_fresh_run(res, name, tolerance):
     saved = json.loads((ROOT / "results" / "invariance.json").read_text())
-    for name, m in res["models"].items():
-        assert saved["models"][name]["auc_documented"] == pytest.approx(m["auc_documented"])
-        assert saved["models"][name]["auc_corrected"] == pytest.approx(m["auc_corrected"])
+    for condition in ("documented", "corrected"):
+        key = f"auc_{condition}"
+        assert saved["models"][name][key] == pytest.approx(res["models"][name][key], abs=tolerance)
+
+
+@pytest.mark.parametrize("name", ["random_forest", "gradient_boosting"])
+def test_tree_models_discrimination_unchanged_in_a_fresh_run(res, name):
+    """The paper's claim, tested directly: relabeling chest pain changes tree-model AUC by at most 0.002."""
+    m = res["models"][name]
+    assert abs(m["auc_documented"] - m["auc_corrected"]) <= 0.002

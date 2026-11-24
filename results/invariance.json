@@ -39,5 +39,12 @@
   "non-anginal pain": 0.18,
   "atypical angina": 0.209,
   "typical angina": 0.729
+ },
+ "environment": {
+  "python": "3.12.13",
+  "platform": "macOS-15.7.7-x86_64-i386-64bit",
+  "numpy": "2.5.5",
+  "scipy": "1.18.1",
+  "scikit-learn": "1.9.1"
  }
 }

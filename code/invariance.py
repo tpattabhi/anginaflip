@@ -83,8 +83,26 @@ def run() -> dict:
     return out
 
 
+def environment() -> dict:
+    """Library versions behind the saved results; tree-model AUCs can differ slightly across them."""
+    import platform
+
+    import numpy
+    import scipy
+    import sklearn
+
+    return {
+        "python": platform.python_version(),
+        "platform": platform.platform(),
+        "numpy": numpy.__version__,
+        "scipy": scipy.__version__,
+        "scikit-learn": sklearn.__version__,
+    }
+
+
 if __name__ == "__main__":
     res = run()
+    res["environment"] = environment()
     (ROOT / "results").mkdir(exist_ok=True)
     (ROOT / "results" / "invariance.json").write_text(json.dumps(res, indent=1))
     print(json.dumps(res, indent=1))

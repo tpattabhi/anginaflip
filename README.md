@@ -10,7 +10,7 @@ The error has been present since at least 1990. It has spread to OpenML, PMLB an
 
 This repository holds the evidence, the analyses and the paper:
 
-> T. T. Pattabhi, *Typical Angina, Reversed: A Chest-Pain Coding Error in the UCI Heart Disease Data That Has Persisted Since 1990*. Preprint, Zenodo, 2026. doi:[10.5281/zenodo.24358545](https://doi.org/10.5281/zenodo.24358545)
+> T. T. Pattabhi, *Typical Angina, Reversed: A Long-Standing Documentation Error in the UCI Heart Disease Data*. Preprint, version 5, 23 Nov 2026 (`paper/`, tag `v5-preprint`). An earlier version (18 Nov 2026), titled *Typical Angina, Reversed: A Chest-Pain Coding Error in the UCI Heart Disease Data That Has Persisted Since 1990*, is on Zenodo: doi:[10.5281/zenodo.24358545](https://doi.org/10.5281/zenodo.24358545)
 
 ## The correction
 
@@ -32,7 +32,7 @@ So the correct label of stored code `k` is the documented label of `5 - k`. Copi
 | E3 | `cleve.mod` (J. Gennari, 1990) | All 303 rows label code 1 `angina` and code 4 `asympt` | `check_cleve_mod` |
 | E4 | Statlog (Heart) | A 270-patient Cleveland subset with identical codes and outcomes | `check_statlog` |
 | E7 | Copies | OpenML `heart-c`/`heart-h` and PMLB (`UCI - 1`) use the documented labels. Kaggle fedesoriano and redwankarimsony write them as words. Kaggle johnsmith88 (1,025 rows) maps 0 = UCI 4, 1 = UCI 2, 2 = UCI 3, 3 = UCI 1, and reverses the outcome | `check_openml`, `check_pmlb`, `check_kaggle` |
-| E8 | Literature audit, pre-specified protocol, 150 sampled papers | 124 readable; 32 state a direction; 25 are clinically backwards (78%, 95% CI 61–89%); none identifies the reversal | `evidence/literature-audit/` |
+| E8 | Literature audit, pre-specified protocol, 150 sampled papers | 124 readable; 32 state a direction; 25 are inconsistent with the corrected categories (78%, 95% CI 61–89%; pre-specified), 22 of them attributable to the documented labels (69%, 51–82%; defined after coding); none identifies the reversal | `evidence/literature-audit/` |
 | E9 | Consequences | Classical models: predictions unchanged, explanations reversed. LLM classifiers: worse with the documented labels | `code/invariance.py`, `code/llm_probe.py` |
 
 ## Reproduce

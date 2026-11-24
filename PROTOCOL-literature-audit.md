@@ -62,3 +62,7 @@ Each result is screened. If the combined frame exceeds 300 records, a random sam
 - **18 Nov 2026, correction of a description (no coding change).**
   - The protocol's "true coding" line says the Kaggle 1,025- and 303-row copies use code = 4 − UCI. Row matching (`code/evidence_checks.py`) shows the exact mapping is 0 = UCI 4, 1 = UCI 2, 2 = UCI 3, 3 = UCI 1: the end codes are swapped and the middle codes keep their order.
   - Every coded statement in the audit concerns an end category (typical angina or asymptomatic), or was judged as written, so no code changes.
+- **23 Nov 2026, after coding (post hoc; recorded here as a deviation).** Two refinements added after further checks of the coding. The pre-specified primary outcome is unchanged (25 of 32 inconsistent with the corrected categories).
+  - **Attributable estimand:** inconsistent statements not caused by the documented labels are separated out: k44 and k98 (outcome reversal in a Kaggle copy) and k51 (its own mapping, ASY = type 2). This leaves 22 of 32 attributable to the documented labels.
+  - **Symmetric sensitivity:** the sensitivity exclusions are also applied to the correct-sounding statements (k110, mapping unreliable).
+  - The row-level table is `evidence/literature-audit/direction-stating-32.tsv`, built by `code/audit_table.py`.

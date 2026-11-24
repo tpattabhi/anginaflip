@@ -1,4 +1,5 @@
-% All entries checked against Crossref, DataCite or the arXiv API on 18 Nov 2026.
+% All entries checked against Crossref, DataCite or the arXiv API on 18 Nov 2026; v2 fixes 23 Nov 2026
+% (published venues for arXiv papers, Ogu title, Harrou article number, printed locators).
 
 @article{detrano1986,
   author  = {Detrano, R. and Leatherman, J. and Salcedo, E. E. and Yiannikas, J. and Williams, G.},
@@ -38,7 +39,8 @@
   title        = {Heart Disease},
   howpublished = {UCI Machine Learning Repository},
   year         = {1989},
-  doi          = {10.24432/C52P4X}
+  doi          = {10.24432/C52P4X},
+  note         = {\url{https://doi.org/10.24432/C52P4X}}
 }
 
 @misc{ucistatlog,
@@ -46,7 +48,7 @@
   howpublished = {UCI Machine Learning Repository},
   doi          = {10.24432/C57303},
   year         = {n.d.},
-  note         = {Accessed 17 Nov 2026}
+  note         = {\url{https://doi.org/10.24432/C57303}. Accessed 17 Nov 2026}
 }
 
 @article{pmlb,
@@ -87,6 +89,33 @@
   note         = {Accessed 17 Nov 2026}
 }
 
+@article{diamond1983,
+  author  = {Diamond, George A.},
+  title   = {A clinically relevant classification of chest discomfort},
+  journal = {Journal of the American College of Cardiology},
+  volume  = {1},
+  number  = {2},
+  pages   = {574--575},
+  year    = {1983},
+  doi     = {10.1016/S0735-1097(83)80093-X}
+}
+
+@misc{kagglenaresh,
+  author       = {nareshbhat},
+  title        = {Kaggle dataset nareshbhat/health-care-data-set-on-heart-attack-possibility},
+  howpublished = {Kaggle, \url{https://www.kaggle.com/datasets/nareshbhat/health-care-data-set-on-heart-attack-possibility}},
+  year         = {n.d.},
+  note         = {Accessed 17 Nov 2026}
+}
+
+@misc{kaggleredwan,
+  author       = {redwankarimsony},
+  title        = {Heart Disease Data},
+  howpublished = {Kaggle, \url{https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data}},
+  year         = {n.d.},
+  note         = {Accessed 17 Nov 2026}
+}
+
 @article{gebru2021,
   author  = {Gebru, Timnit and Morgenstern, Jamie and Vecchione, Briana and Vaughan, Jennifer Wortman and Wallach, Hanna and Daum{\'e} III, Hal and Crawford, Kate},
   title   = {Datasheets for datasets},
@@ -116,36 +145,40 @@
   doi       = {10.1145/2783258.2788613}
 }
 
-@misc{northcutt2021,
-  author        = {Northcutt, Curtis G. and Athalye, Anish and Mueller, Jonas},
-  title         = {Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks},
-  year          = {2021},
-  eprint        = {2103.14749},
-  archivePrefix = {arXiv}
+@inproceedings{northcutt2021,
+  author    = {Northcutt, Curtis G. and Athalye, Anish and Mueller, Jonas},
+  title     = {Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks},
+  booktitle = {Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks},
+  year      = {2021},
+  note      = {arXiv:2103.14749}
 }
 
-@misc{ding2021,
-  author        = {Ding, Frances and Hardt, Moritz and Miller, John and Schmidt, Ludwig},
-  title         = {Retiring Adult: New Datasets for Fair Machine Learning},
-  year          = {2021},
-  eprint        = {2108.04884},
-  archivePrefix = {arXiv}
+@inproceedings{ding2021,
+  author    = {Ding, Frances and Hardt, Moritz and Miller, John and Schmidt, Ludwig},
+  title     = {Retiring Adult: New Datasets for Fair Machine Learning},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {34},
+  year      = {2021},
+  note      = {arXiv:2108.04884}
 }
 
-@misc{lundberg2017,
-  author        = {Lundberg, Scott and Lee, Su-In},
-  title         = {A Unified Approach to Interpreting Model Predictions},
-  year          = {2017},
-  eprint        = {1705.07874},
-  archivePrefix = {arXiv}
+@inproceedings{lundberg2017,
+  author    = {Lundberg, Scott M. and Lee, Su-In},
+  title     = {A Unified Approach to Interpreting Model Predictions},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {30},
+  year      = {2017},
+  note      = {arXiv:1705.07874}
 }
 
-@misc{hegselmann2022,
-  author        = {Hegselmann, Stefan and Buendia, Alejandro and Lang, Hunter and Agrawal, Monica and Jiang, Xiaoyi and Sontag, David},
-  title         = {{TabLLM}: Few-shot Classification of Tabular Data with Large Language Models},
-  year          = {2022},
-  eprint        = {2210.10723},
-  archivePrefix = {arXiv}
+@inproceedings{hegselmann2022,
+  author    = {Hegselmann, Stefan and Buendia, Alejandro and Lang, Hunter and Agrawal, Monica and Jiang, Xiaoyi and Sontag, David},
+  title     = {{TabLLM}: Few-shot Classification of Tabular Data with Large Language Models},
+  booktitle = {Proceedings of the 26th International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {206},
+  year      = {2023},
+  note      = {arXiv:2210.10723}
 }
 
 @misc{qwen25,
@@ -153,7 +186,8 @@
   title         = {{Qwen2.5} Technical Report},
   year          = {2024},
   eprint        = {2412.15115},
-  archivePrefix = {arXiv}
+  archivePrefix = {arXiv},
+  note          = {arXiv:2412.15115}
 }
 
 @misc{llama3,
@@ -161,7 +195,8 @@
   title         = {The {Llama} 3 Herd of Models},
   year          = {2024},
   eprint        = {2407.21783},
-  archivePrefix = {arXiv}
+  archivePrefix = {arXiv},
+  note          = {arXiv:2407.21783}
 }
 
 @misc{phi3,
@@ -169,7 +204,8 @@
   title         = {{Phi-3} Technical Report: A Highly Capable Language Model Locally on Your Phone},
   year          = {2024},
   eprint        = {2404.14219},
-  archivePrefix = {arXiv}
+  archivePrefix = {arXiv},
+  note          = {arXiv:2404.14219}
 }
 
 @article{wilson1927,
@@ -185,7 +221,7 @@
 
 @article{ogu2026,
   author  = {Ogu, Reginald Ekene and Ihuefo, Juliana and Iheanacho, Precious},
-  title   = {A Recall-Oriented Comparative Evaluation of Machine Learning Models for Heart Disease Detection on the {Cleveland} Dataset},
+  title   = {A Recall-Oriented Comparative Evaluation of Machine Learning Models for Heart Disease Detection on the {Cleveland} Heart Disease Dataset},
   journal = {African Journal of Advances in Science and Technology Research},
   volume  = {23},
   number  = {1},
@@ -199,7 +235,8 @@
   title         = {Explainable {AI} meets Healthcare: A Study on Heart Disease Dataset},
   year          = {2020},
   eprint        = {2011.03195},
-  archivePrefix = {arXiv}
+  archivePrefix = {arXiv},
+  note          = {arXiv:2011.03195}
 }
 
 @article{baghdadi2023,
@@ -218,6 +255,7 @@
   journal = {Computational Intelligence},
   volume  = {41},
   number  = {5},
+  pages   = {e70130},
   year    = {2025},
   doi     = {10.1111/coin.70130}
 }
