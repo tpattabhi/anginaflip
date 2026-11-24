@@ -29,4 +29,10 @@
 
 If a paper states more than one direction, code the clearest data-derived one and mention the rest in notes.
 
-When you're done, tell Claude. It will run `uv run python code/blind_packet.py score`, which reports raw agreement and Cohen's kappa on the three-way outcome (no direction / wrong / right) and lists every disagreement for joint review.
+When you're done, tell Claude. It will run `uv run python code/blind_packet.py score`. It reports raw agreement and Cohen's kappa for the three-way outcome (no direction / wrong / right), for whether a paper states a direction, for the verdict, for rationalised and for the copy group; recomputes each of the paper's audit figures from your codes; and lists every disagreement for joint review.
+
+## Form conventions
+- **states_direction:** Y, N, or NA if you could not read the paper. When it is Y, **clinically_correct** and **rationalised** must each be Y or N.
+- Keep `form.tsv` tab-separated. If you edit it in a spreadsheet, export as tab-separated text (UTF-8 if offered), not .xlsx or .csv.
+- Fill **copy** for every paper you read (a blank copy is left out of the copy comparison). Use the names above (for example "UCI Cleveland 303", "Kaggle 1,025", "fedesoriano 918", "unclear"); the scorer maps them onto the paper's copy groups.
+- Leave a row blank if you have not coded it yet; the scorer reports how many are done.
