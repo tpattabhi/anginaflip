@@ -11,14 +11,14 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 
-% Preprint, version 8, 24 Nov 2026. Every number in this file is taken from RESULTS.md and the
+% Preprint, version 9, 25 Nov 2026. Every number in this file is taken from RESULTS.md and the
 % evidence/ folders; the source file for each is named in a comment beside it.
 
 \title{Typical Angina, Reversed: A Long-Standing Documentation Error in the UCI Heart Disease Data}
 \author{Tejas Tovinkere Pattabhi\\
 University of the Cumberlands, Williamsburg, KY, USA\\
 \texttt{tpattabhi65846@ucumberlands.edu}}
-\date{Preprint, version 8, 24 November 2026}
+\date{Preprint, version 9, 25 November 2026}
 
 \begin{document}
 \maketitle
@@ -31,7 +31,7 @@ Two complementary checks establish this:
 (ii) in the Budapest, Switzerland and Long Beach files, 93--96\% of patients coded 4 have all three classical angina features.
 A 1990 word-labeled Cleveland file already uses the documented labels, and Statlog (Heart), a Cleveland subset, stores the same codes. OpenML, PMLB and two highly voted Kaggle copies that name the categories use the same documented labels (about 400{,}000 downloads combined).
 
-We audited a seeded random sample of 150 records from a pre-specified Scholar query for SHAP studies of these data mentioning asymptomatic chest pain (124 readable). Of 32 papers that state a direction for a named category, 25 (78\%; 95\% CI 61--89\%) state one inconsistent with the corrected category identities; 22 (69\%; 51--82\%; post hoc) are attributable to the documentation error, and nine of these explain it clinically. None of the 124 readable papers identifies the reversal.
+We audited a seeded random sample of 150 records from a pre-specified Scholar query for SHAP studies of these data mentioning asymptomatic chest pain (124 readable). Of 32 papers that state a direction for a named category, 25 (78\%; 95\% CI 61--89\%) state one inconsistent with the corrected category identities; 22 (69\%; 51--82\%; post hoc) are attributable to the documentation error, and nine of these explain it clinically. None of the 124 readable papers identifies the reversal. The primary codes were produced by Claude and reviewed by the author; the author's recoding of 52 papers (all 32 direction-stating papers and 20 others) agreed with them on 42 of the 50 that could be read ($\kappa=0.73$).
 
 Conventional models are essentially unaffected, one reason the error went unnoticed. Interpretations that attach the documented names to model effects are reversed, and zero-shot language-model classifiers that read the labels are misled: with the documented labels, three open-weight models lose 0.12--0.33 in area under the receiver operating characteristic curve (AUC) given age, sex and chest-pain type.
 
@@ -162,7 +162,7 @@ The protocol was fixed before any full text was read; later changes are logged w
 \item \textbf{Sample:} the first 150 records of a seeded random order (seed 20261117) of the 230 eligible records.
 \item \textbf{Inclusion:} a paper is included if its full text states a direction for a named chest-pain category, from its own data or model. Importance without a sign, numeric-only statements and background text were not counted.
 \item \textbf{Coding:} for each included paper we recorded the copy used, the verbatim claim, whether the stated direction is clinically correct, and whether the paper explains the direction clinically. Claude (Anthropic) produced the primary codes, and the author reviewed them.
-\item \textbf{Repeat coding:} about a week later, the author recoded a shuffled packet containing all 32 papers originally coded as direction-stating and 20 others, without consulting the per-paper primary codes. An automated extraction step supplied text passages. The author checked source material where available, including 13 publisher PDFs obtained through university library access, and used tables and figures when they established the category and direction. Two fresh-context reviews with OpenAI Codex, also without the primary codes, then checked the recoding against the coding rules. The first review changed the direction code for two papers and the rationalisation code for one. Coding was frozen after the second review. Raw agreement and Cohen's $\kappa$ were calculated on the 50 papers coded in both passes.
+\item \textbf{Repeat coding:} about a week later, the author recoded a shuffled packet containing all 32 papers originally coded as direction-stating and 20 others, without consulting the per-paper primary codes. An automated extraction step supplied text passages. The author checked source material where available, including 13 publisher PDFs (11 through university library access and 2 open access), and used tables and figures when they established the category and direction. Two fresh-context reviews with OpenAI Codex, also without the primary codes, then checked the recoding against the coding rules. The first review changed the direction code for two papers and the rationalization code for one. Coding was frozen after the second review. Raw agreement and Cohen's $\kappa$ were calculated on the 50 papers coded in both passes.
 \item \textbf{Not reported:} the pre-specified citation-weighted totals (descriptive) were not computed.
 \item \textbf{Access:} inaccessible papers were counted, not replaced. Full texts came from open access, the author's university library and open repository copies. No access control was circumvented: where a publisher showed a browser check, the author cleared it by hand or the paper was counted as inaccessible.
 \end{itemize}
@@ -191,7 +191,7 @@ None of the 124 readable papers identifies the reversal, including a 2026 leakag
 The 32 direction-stating papers, with venues, copies, verbatim claims and codings, are listed in \texttt{evidence/literature-audit/direction-stating-32.tsv} in the repository.
 
 \paragraph{Repeat coding.}
-The recoding covered 50 of the 52 papers; two full texts remained behind paywalls. Agreement between the primary coding and the final recoding on the three-way outcome (no direction, clinically inconsistent, clinically consistent) was 42 of 50 ($\kappa=0.73$; 44 of 50 before the first review). The two codings agreed on whether a paper stated a direction for 43 of 50 papers ($\kappa=0.72$) and on clinical consistency for 24 of the 25 papers that both identified as stating a direction ($\kappa=0.86$). On the same 50 papers, the primary coding found 24 inconsistent statements among 30 direction-stating papers (80\%), and the recoding found 21 among 27 (78\%).
+The recoding covered 50 of the 52 papers; two full texts remained behind paywalls. Agreement between the primary coding and the final recoding on the three-way outcome (no direction, clinically inconsistent, clinically consistent) was 42 of 50 ($\kappa=0.73$; 44 of 50 before the first review). The two codings agreed on whether a paper stated a direction for 43 of 50 papers ($\kappa=0.72$) and on clinical consistency for 24 of the 25 papers that both identified as stating a direction ($\kappa=0.86$). On the same 50 papers, the primary coding found 24 inconsistent statements among 30 direction-stating papers (80\%), and the recoding found 21 among 27 (78\%). % evidence/literature-audit/second-coder/score.txt, form.tsv
 % evidence/literature-audit/audit-150-summary.md, round3-access-notes.md; code/audit_table.py
 
 \section{Consequences}\label{sec:consequences}
@@ -276,7 +276,7 @@ More generally, a benchmark variable whose effect contradicts settled domain kno
 \item \textbf{Literature frame:} the frame is one Scholar query that requires the words asymptomatic and SHAP. Our rates describe direction-stating papers in this frame, not the whole literature. Because the query requires the word asymptomatic, papers in the frame are probably more likely to state a direction for that category than papers in general, so the 78\% may be higher than in the wider literature.
 \item \textbf{Coding and recoding:} the primary codes were produced by Claude and reviewed by the author; the recoding was done by the author, with review by OpenAI Codex. The author had reviewed the primary codes about a week before recoding and knew the audit's overall results, so the agreement figures describe a human check of AI coding. The 22 of 32 attributable statements and the sensitivity counts also depend on categories defined after coding. The agreement estimates apply to the 50 accessible papers in a packet enriched for papers originally coded as direction-stating. The automatically extracted passages could omit relevant context or claims in tables and figures, and only some of those materials were checked directly. Attribution and sensitivity comparisons reused the primary coder's exclusions. No coder unconnected with the project has recoded the audit.
 \item \textbf{Unread papers:} 17\% of sampled papers could not be read.
-\item \textbf{Text-only extraction:} claims shown only in figures were not captured, so the counts of inconsistent statements are lower bounds. The percentages could move either way, because the number of direction-stating papers could also change.
+\item \textbf{Text-only extraction:} in the primary audit, claims shown only in figures were not captured, so the counts of inconsistent statements are lower bounds. The percentages could move either way, because the number of direction-stating papers could also change.
 \item \textbf{LLM probe:} small quantized models, one prompt format, zero-shot only, and one site. The findings may not hold for few-shot or fine-tuned methods, where the data can override the label text. The pre-specified Hungarian replication was not run.
 \item \textbf{Copies checked:} Kaggle copies were selected from a list sorted by votes, not downloads; other popular copies may differ.
 \end{itemize}
@@ -289,7 +289,7 @@ The UCI Heart Disease chest-pain variable has been documented in reverse since a
 All evidence files, scripts, the literature-audit coding and the LLM-probe notebook are available at \url{https://github.com/tpattabhi/anginaflip}. An earlier version (18 Nov 2026), titled ``Typical Angina, Reversed: A Chest-Pain Coding Error in the UCI Heart Disease Data That Has Persisted Since 1990'', is archived at \url{https://doi.org/10.5281/zenodo.24358545}.
 
 \section*{Acknowledgments and disclosures}
-This work received no funding. The author reports no competing interests. The work was done independently and is not affiliated with any employer. The author used Claude (Anthropic) to assist with code, literature retrieval and editing. \textbf{[DISCLOSURE: TO FILL IN]} The author reviewed, verified and takes responsibility for all content.
+This work received no funding. The author reports no competing interests. The work was done independently and is not affiliated with any employer. The author used Claude (Anthropic) to write and run analysis code, retrieve and extract text from the literature, produce the primary literature-audit codes, and edit the manuscript. The author reviewed the primary codes and recoded a sample of papers; OpenAI Codex reviewed that recoding against the coding rules. The author reviewed, verified and takes responsibility for all content.
 
 \bibliographystyle{unsrtnat}
 \bibliography{refs}
