@@ -1,0 +1,85 @@
+Second fresh-context review of the literature-audit coding
+
+Scope
+A fresh-context AI reviewer checked the coding instructions, selected source
+passages, publisher PDFs, and manuscript wording without consulting the primary
+coding key or agreement report. The review focused on P42 and P49 and tested
+the same inclusion rule against other borderline cases. It was a targeted
+review of the 52-row form. Two full texts, P28 and P48, remain unavailable.
+
+Findings
+
+P42 — Keep N. In Figure 5a, the vertical axis is the SHAP value for ST_Slope.
+Color encodes chest-pain type. The paper discusses the prevalence of chest-pain
+categories across ST-slope groups. Figure 4 shows signed ChestPainType SHAP
+values, but its generic high-to-low color scale gives no verifiable mapping to
+the named categories for this dataset. Table 1 lists their names. The numeric
+mapping in Table 2 describes a different dataset.
+Source: https://www.mdpi.com/2227-9717/10/4/749
+
+P49 — Keep N. Section 5 uses an example involving age over 55 and type 4
+chest pain, then illustrates a possible path involving age over 60, type 4,
+and ST depression below 2.0. The paper identifies neither as a fitted rule
+or an observed result. This is an evidence-source decision under the
+own-data-or-model requirement.
+Source: full-texts/P49-ieee-11518838.pdf, Section 5A–B.
+
+P39 — Proposed correction from Y to N. The paper says asymptomatic discomfort
+was common among heart-disease cases. It mentions count plots by class but
+provides neither the categorical plot nor the comparator, rates, or explicit
+higher/lower statement needed to establish direction. The form's note
+overstates what the count-plot discussion shows.
+Source: full-texts/P39-ieee-11575789.pdf, p. 3, Categorical Comparison.
+
+Consistency checks
+
+- P08 stays Y. Figures 2–4 show a positive LIME contribution in a specific
+  model prediction. Table III identifies the observation as ASY.
+- P25 stays Y. Its LIME discussion explicitly identifies typical angina as
+  favoring the CVD prediction for the example patient.
+- P32 stays Y. The paper's own SHAP interpretation explicitly says
+  asymptomatic presentation predicts disease. The reported absolute SHAP
+  magnitude alone cannot establish direction, which is a limitation of the
+  paper's evidence.
+- P36 and P51 stay Y. Their table or plotted counts supply a comparison
+  between groups. P51's dataset copy remains uncertain.
+- P13 and P47 stay N. P13 ranks the impact of named categories without a
+  direction. P47's own result concerns numeric cp, while its signed
+  typical-angina statement cites external work.
+- P23 stays N. Figures 7–8 use a numeric color scale, and Table II lists
+  codes 1–4 alongside an observed range of 0–3. The paper does not
+  establish a reliable mapping from those signed effects to named categories.
+- P03 and P52 stay Y. The papers expressly describe lower occurrence or
+  weaker prediction for a named category in their own analyses. Their
+  evidence is based on counts.
+- P02 stays Y for a direction. The local LIME contributions are signed,
+  while the clinical verdict depends on interpreting ATA in its standard
+  sense despite the paper's conflicting expansion.
+- P18 stays N for the linked first preprint version. The second version
+  explicitly associates asymptomatic cp_0 with lower predicted risk.
+  Its category mapping still warrants caution.
+- P24 stays N for this audit. Its directional figure describes the Bangladesh
+  cohort. The Cleveland data are used for external validation.
+- P15 stays N. Its source is an independent Indian hospital dataset with
+  1,000 patients. The current notes could name that source explicitly.
+
+Manuscript wording
+
+Specify that the reported agreement compares primary coding with the final
+AI recoding for 50 matched papers. The current phrase "both passes" follows
+a description of the initial AI recoding and the fresh-context review, which
+can make the comparator unclear. Distinguish the text-only extraction
+limitation from the selected figures and tables checked directly during the
+AI recoding. The TMLR draft still describes second coding as planned.
+
+Disposition
+
+This file records the review findings separately from the coding and scoring
+artifacts. The proposed P39 correction has not been applied or scored.
+
+Decision (25 Nov 2026): P39 stays Y. INSTRUCTIONS.md counts "a rate by
+category given in words" drawn from the paper's own data, and P39 reports
+from its own count plots by target class that asymptomatic chest discomfort
+was common among heart-disease cases. P51, a comparable statement, also stays
+Y. Coding is frozen after this review; form.tsv and score.txt are final
+(42/50, kappa 0.73).

@@ -1,0 +1,53 @@
+coded 50/52; marked not read (NA): 2 ['P28', 'P48']
+Every figure below uses only the coded items, for both coders.
+
+Agreement
+three-way outcome (pre-specified): 42/50 agree; kappa 0.73
+states a direction: 43/50 agree; kappa 0.72
+verdict, inconsistent or not (both stating): 24/25 agree; kappa 0.86
+rationalised (both inconsistent, attributable): 15/18 agree; kappa 0.57
+copy group (primary direction-stating items): 20/30 agree; kappa 0.55
+
+Figures, primary vs second coder (same items)
+  Verdicts are each coder's own. Cause (other than the labels) and the sensitivity exclusions are the
+  primary coder's judgements, applied to both, because the form does not code them.
+ [primary coder]
+  inconsistent / direction-stating (paper: 25 of 32): 24 of 30 (80%; 95% CI 63-90%)
+  attributable / direction-stating (paper: 22 of 32): 21 of 30 (70%; 95% CI 52-83%)
+  sensitivity set 27: inconsistent (paper: 20 of 27): 19 of 25 (76%; 95% CI 57-89%)
+  sensitivity set 27: attributable (paper: 18 of 27): 17 of 25 (68%; 95% CI 48-83%)
+  sensitivity set 26: inconsistent (paper: 20 of 26): 19 of 24 (79%; 95% CI 60-91%)
+  sensitivity set 26: attributable (paper: 18 of 26): 17 of 24 (71%; 95% CI 51-85%)
+  rationalised among attributable (paper: 9 of 22): 8 of 21
+ [second coder]
+  inconsistent / direction-stating (paper: 25 of 32): 21 of 27 (78%; 95% CI 59-89%)
+  attributable / direction-stating (paper: 22 of 32): 19 of 27 (70%; 95% CI 52-84%)
+  sensitivity set 27: inconsistent (paper: 20 of 27): 17 of 23 (74%; 95% CI 54-87%)
+  sensitivity set 27: attributable (paper: 18 of 27): 16 of 23 (70%; 95% CI 49-84%)
+  sensitivity set 26: inconsistent (paper: 20 of 26): 17 of 22 (77%; 95% CI 57-90%)
+  sensitivity set 26: attributable (paper: 18 of 26): 16 of 22 (73%; 95% CI 52-87%)
+  rationalised among attributable (paper: 9 of 22): 3 of 19
+  Note: items the second coder calls direction-stating that the primary coder did not are counted as attributable unless they are in the primary coder's other-cause list; review them in the list below.
+
+Disagreements, for joint review
+  outcome P02 (k120): primary=none second=right
+  outcome P08 (k74): primary=none second=wrong
+  outcome P11 (k21): primary=wrong second=none
+  outcome P13 (k81): primary=right second=none
+  outcome P42 (k36): primary=wrong second=none
+  outcome P47 (k23): primary=right second=none
+  outcome P49 (k68): primary=wrong second=none
+  outcome P52 (k98): primary=wrong second=right
+  rationalised P05 (k63): primary=yes second=no
+  rationalised P14 (k65): primary=yes second=no
+  rationalised P32 (k46): primary=yes second=no
+  copy P03 (k88): primary='Kaggle "heart attack" 303 copy (word labels; counts per class)' second='UCI Cleveland 297'
+  copy P10 (k93): primary='1,190 merge (UCI words, 4 = asymptomatic)' second='unclear'
+  copy P17 (k138): primary='Cleveland (UCI codes)' second='fedesoriano 918'
+  copy P25 (k110): primary='303 (source [26])' second='Kaggle 303'
+  copy P27 (k20): primary='Kaggle (cp 0–3)' second='unclear'
+  copy P33 (k131): primary='? (UCI codes, CP Type 4)' second='unclear'
+  copy P39 (k57): primary='303 records' second='1190 merge'
+  copy P50 (k54): primary='Cleveland 303' second='UCI Cleveland 297 (cp minus 1)'
+  copy P51 (k1): primary='UCI Cleveland' second='unclear'
+  copy P52 (k98): primary='Kaggle 1,025' second='unclear'
