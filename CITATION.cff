@@ -9,6 +9,9 @@ authors:
     orcid: "https://orcid.org/0009-0000-9364-9519"
 date-released: 2026-11-24
 identifiers:
+  - type: other
+    value: "arXiv:2611.33248"
+    description: "arXiv preprint"
   - type: doi
     value: "10.5281/zenodo.24358545"
     description: "Version 1 on Zenodo (18 Nov 2026), earlier title: Typical Angina, Reversed: A Chest-Pain Coding Error in the UCI Heart Disease Data That Has Persisted Since 1990"
